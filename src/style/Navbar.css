@@ -1,0 +1,23 @@
+span:hover {
+    cursor: pointer;
+}
+
+.active {
+    background-color: #cbdce6 !important;
+}
+
+.navbar {
+    padding: 0 1rem !important;
+}
+
+.bg-light {
+    background-color: #f1f2f3 !important;
+}
+
+.nav-item {
+    padding: 5px;
+}
+
+.nav-link {
+    color: inherit !important;
+}

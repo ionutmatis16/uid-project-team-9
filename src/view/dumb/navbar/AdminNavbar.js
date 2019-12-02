@@ -8,28 +8,46 @@ const AdminNavbar = () => (
 
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav mr-auto">
-                <li className="nav-item active">
-                    <span className="nav-link" href="#">Home</span>
+                <li className={"nav-item " + (window.location.hash.includes("home") ? "active" : "")}>
+                    <span className="nav-link"
+                          onClick={() => window.location.assign("#/home")}>
+                        Home
+                    </span>
                 </li>
-                <li className="nav-item">
-                    <a className="nav-link" href="#">About</a>
+                <li className={"nav-item " + (window.location.hash.includes("about") ? "active" : "")}>
+                    <span className="nav-link"
+                          onClick={() => window.location.assign("#/about")}>
+                        About
+                    </span>
                 </li>
-                <li className="nav-item">
-                    <a className="nav-link" href="#">FAQ</a>
+                <li className={"nav-item " + (window.location.hash.includes("faq") ? "active" : "")}>
+                    <span className="nav-link"
+                          onClick={() => window.location.assign("#/faq")}>
+                        FAQ
+                    </span>
                 </li>
-                <li className="nav-item">
-                    <a className="nav-link" href="#">Projects</a>
+                <li className={"nav-item " + (window.location.hash.includes("projects") ? "active" : "")}>
+                    <span className="nav-link"
+                          onClick={() => window.location.assign("#/projects")}>
+                        Projects
+                    </span>
                 </li>
-                <li className="nav-item">
-                    <a className="nav-link" href="#">Announcements</a>
+                <li className={"nav-item " + (window.location.hash.includes("announcements") ? "active" : "")}>
+                    <span className="nav-link"
+                          onClick={() => window.location.assign("#/announcements")}>
+                        Announcements
+                    </span>
                 </li>
-                <li className="nav-item">
-                    <a className="nav-link" href="#">Project approval</a>
+                <li className={"nav-item " + (window.location.hash.includes("project-approval") ? "active" : "")}>
+                    <span className="nav-link"
+                          onClick={() => window.location.assign("#/project-approval")}>
+                        Project approval
+                    </span>
                 </li>
             </ul>
             <ul className="navbar-nav ml-auto">
                 <li className="nav-item">
-                    <a className="nav-link" href="#">Admin</a>
+                    <span className="nav-link">Admin</span>
                 </li>
             </ul>
         </div>

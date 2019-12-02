@@ -1,0 +1,21 @@
+.main-title {
+    margin: 50px 0;
+}
+
+.main-content {
+    display: flex;
+    justify-content: space-around;
+}
+
+.main-content > div {
+    width: 40%;
+}
+
+img {
+    width: 100%;
+}
+
+p {
+    text-align: justify;
+    font-size: 40px;
+}

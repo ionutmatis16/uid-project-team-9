@@ -47,6 +47,7 @@ const AnonymousNavbar = () => (
 
             <ul className="navbar-nav ml-auto">
                 <li className="nav-item">
+                    {/*Add a pop-up to choose between User or Admin*/}
                     <span className="nav-link">Login</span>
                 </li>
                 <li className="nav-item">
