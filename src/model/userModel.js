@@ -9,8 +9,7 @@ class UserModel extends EventEmitter {
                 username: "",
                 password: "",
                 role: "anonymous"
-            },
-            invalidUsernameOrPassword: null,
+            }
         }
     }
 
