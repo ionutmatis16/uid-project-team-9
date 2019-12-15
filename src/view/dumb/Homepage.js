@@ -1,7 +1,7 @@
 import React from 'react';
 import MyNavbar from "./navbar/MyNavbar";
-import "../../style/Homepage.css";
-import homepageImage from "../../images/homepage-image.png";
+import "../../style/homepage.css";
+import homepageImage from "../../images/homepage.png";
 
 const HomePage = ({userModelState}) => (
     <div>

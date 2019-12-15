@@ -5,6 +5,7 @@ const AnonymousNavbar = () => (
         <nav className="navbar navbar-light bg-light">
             <span className="navbar-brand mb-0 h1">City budgeting</span>
         </nav>
+
         <div className="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
             <ul className="navbar-nav mr-auto">
                 <li className={"nav-item " + (window.location.hash.includes("home") ? "active" : "")}>
