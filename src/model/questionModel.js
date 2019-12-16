@@ -6,66 +6,75 @@ class QuestionModel extends EventEmitter {
         this.state = {
             questions: [
                 {
-                    id: 1,
+                    id: 0,
                     text: "Who can submit project proposals?",
-                    clicked: false,
+                    active: false,
                     answers: [
                         {
-                            text: "dummy text 1"
+                            text: "Citizens who live, work or study in the current city and are at least 18 years old may participate in the participatory budgeting process."
                         }
                     ]
                 },
                 {
-                    id: 2,
-                    text: "Who can I submit a project proposal?",
-                    clicked: false,
+                    id: 1,
+                    text: "How can I submit a project proposal?",
+                    active: false,
                     answers: [
                         {
-                            text: "dummy text 2"
+                            text: "Proposals can be sent through the City Budgeting platform site."
                         }
                     ]
                 }, {
-                    id: 3,
+                    id: 2,
                     text: "What is the maximum sum allocated to a project?",
-                    clicked: false,
+                    active: false,
                     answers: [
                         {
-                            text: "dummy text 3"
+                            text: "Each proposal must have a total cost of up to 150,000 euros (including VAT)."
+                        }
+                    ]
+                },
+                {
+                    id: 3,
+                    text: "How many projects will be funded?",
+                    active: false,
+                    answers: [
+                        {
+                            text: "A total of 15 projects will be financed, each project having a maximum value of 150,000 Euro (including VAT)."
                         }
                     ]
                 },
                 {
                     id: 4,
-                    text: "How many projects will be funded?",
-                    clicked: false,
+                    text: "How many proposals can a citizen submit?",
+                    active: false,
                     answers: [
                         {
-                            text: "dummy text 4"
+                            text: "Each citizen can propose a maximum number of 1 project for each category."
                         }
                     ]
                 },
                 {
                     id: 5,
-                    text: "How many proposals can a citizen submit?",
-                    clicked: false,
+                    text: "How can I vote a project?",
+                    active: false,
                     answers: [
                         {
-                            text: "Each citizen can propose a maximu number of 1 project for each category"
-                        }
-                    ]
-                },
-                {
-                    id: 6,
-                    text: "How can I vote a project??",
-                    clicked: false,
-                    answers: [
-                        {
-                            text: "dummy text 6"
+                            text: "Voting takes place in two distinct stages. In the first voting phase, each citizen registered on the participatory budgeting platform can choose six projects (one for each of the six established areas).\n" +
+                                "In the second stage, each citizen can choose a single project out of the 30 established in the first phase. A number of 15 projects will be selected."
                         }
                     ]
                 }
             ]
         }
+    }
+
+    toggleQuestion = (questionId) => {
+        let isActive = this.state.questions[questionId].active;
+        isActive = !isActive;
+        this.state.questions[questionId].active = isActive;
+
+        this.emit("changedQuestion", this.state); // the state has changed, passed the new state as arg
     }
 }
 
