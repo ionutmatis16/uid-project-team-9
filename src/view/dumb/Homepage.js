@@ -1,14 +1,9 @@
 import React from 'react';
-import MyNavbar from "./navbar/MyNavbar";
 import "../../style/homepage.css";
 import homepageImage from "../../images/homepage.png";
 
 const HomePage = ({userModelState, loginUser, loginAdmin, logout}) => (
     <div>
-        <MyNavbar userModelState={userModelState}
-                  loginUser={loginUser}
-                  loginAdmin={loginAdmin}
-                  logout={logout}/>
         <div className="main-title text-center">
             <h1>Platform for public engagement</h1>
             <h1>in City budgeting</h1>
