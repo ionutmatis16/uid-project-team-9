@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import {HashRouter, Route, Switch} from "react-router-dom";
+import {HashRouter, Route, Switch, Redirect} from "react-router-dom";
 import SmartHomepage from "./view/smart/SmartHomepage";
 import SmartFAQList from "./view/smart/SmartFAQList";
 
@@ -13,6 +13,7 @@ function App() {
                 <Route exact component={SmartFAQList} path="/faq"/>
 
             </Switch>
+            <Redirect to='/home'/>
         </HashRouter>
     </div>
   );
