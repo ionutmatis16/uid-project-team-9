@@ -1,6 +1,6 @@
 import React from 'react';
 
-const AdminNavbar = () => (
+const AdminNavbar = ({logout}) => (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <nav className="navbar navbar-light bg-light">
             <span className="navbar-brand mb-0 h1">City budgeting</span>
@@ -48,6 +48,12 @@ const AdminNavbar = () => (
             <ul className="navbar-nav ml-auto">
                 <li className="nav-item">
                     <span className="nav-link">Admin</span>
+                </li>
+                <li className="nav-item">
+                    <span className="nav-link"
+                          onClick={logout}>
+                        Logout
+                    </span>
                 </li>
             </ul>
         </div>
