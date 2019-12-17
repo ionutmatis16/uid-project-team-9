@@ -5,31 +5,35 @@ class UserModel extends EventEmitter {
         super();
         this.state = {
             currentUser: {
-                id: -1,
-                username: "",
-                password: "",
-                role: "anonymous"
+                role: "user"
             }
         }
     }
 
-    changeUserProperty(property, value) {
-        this.state = {
-            ...this.state,
-            currentUser: {
-                ...this.state.currentUser,
-                [property]: value
-            }
-        };
-        this.emit("changeUser", this.state);
-    }
+    loginUser = () => {
+        this.changeRole("user");
+    };
 
-    changeStateProperty(property, value) {
+    loginAdmin = () => {
+        this.changeRole("admin");
+    };
+
+    logout = () => {
+        this.changeRole("anonymous");
+    };
+
+    changeRole = (newRole) => {
+        let newUser = {
+            role: newRole
+        };
+
         this.state = {
             ...this.state,
-            [property]: value
+            currentUser: newUser
         };
+
         this.emit("changeUser", this.state);
+        window.location.assign("#/home");
     }
 }
 

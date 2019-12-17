@@ -15,9 +15,39 @@ span:hover {
 }
 
 .nav-item {
-    padding: 5px;
+    padding: 5px !important;
 }
 
 .nav-link {
     color: inherit !important;
+}
+
+.login-button {
+    background-color: #F8F9FA !important;
+    border: none !important;
+    color: black !important;
+}
+
+.align-center {
+    display: flex !important;
+    justify-content: space-around !important;
+}
+
+.my-dropdown-button {
+    background-color: #F8F9FA !important;
+    border: none !important;
+    color: black !important;
+}
+
+.my-dropdown-button:focus {
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.my-dropdown-menu {
+    padding: 0 !important;
+}
+
+.my-dropdown-menu > * {
+    border: 1px solid lightgray !important;
 }

@@ -1,6 +1,7 @@
 import React from 'react';
+import {DropdownItem, DropdownMenu, DropdownToggle, UncontrolledButtonDropdown} from 'reactstrap';
 
-const UserNavbar = () => (
+const UserNavbar = ({logout}) => (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <nav className="navbar navbar-light bg-light">
             <span className="navbar-brand mb-0 h1">City budgeting</span>
@@ -46,9 +47,24 @@ const UserNavbar = () => (
                 </li>
             </ul>
             <ul className="navbar-nav ml-auto">
+                <div className="btn-group">
+                    <UncontrolledButtonDropdown>
+                        <DropdownToggle caret className="my-dropdown-button">
+                            My account
+                        </DropdownToggle>
+                        <DropdownMenu className="my-dropdown-menu">
+                            <DropdownItem>My projects</DropdownItem>
+                            <DropdownItem>Voted projects</DropdownItem>
+                            <DropdownItem>Favorite projects</DropdownItem>
+                            <DropdownItem>Settings</DropdownItem>
+                        </DropdownMenu>
+                    </UncontrolledButtonDropdown>
+                </div>
                 <li className="nav-item">
-                    {/*Dropdown here*/}
-                    <span className="nav-link">My account</span>
+                    <span className="nav-link"
+                          onClick={logout}>
+                        Logout
+                    </span>
                 </li>
             </ul>
         </div>
