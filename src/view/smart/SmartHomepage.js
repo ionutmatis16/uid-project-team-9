@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import HomePage from "../dumb/Homepage";
 import userModel from "../../model/userModel";
+import MyNavbar from "../dumb/navbar/MyNavbar";
 
 const mapModelStateToComponentState = (userModel) => ({
     userModelState: userModel.state
@@ -21,11 +22,14 @@ export default class SmartHomepage extends Component {
 
     render() {
         return (
-            <HomePage userModelState={this.state.userModelState}
-                      loginUser={userModel.loginUser}
-                      loginAdmin={userModel.loginAdmin}
-                      logout={userModel.logout}/>
+            <div>
+                <MyNavbar userModelState={this.state.userModelState}
+                          loginUser={userModel.loginUser}
+                          loginAdmin={userModel.loginAdmin}
+                          logout={userModel.logout}/>
+
+                <HomePage userModelState={this.state.userModelState}/>
+            </div>
         );
     }
-
 }
