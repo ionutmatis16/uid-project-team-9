@@ -65,7 +65,11 @@ class QuestionModel extends EventEmitter {
                         }
                     ]
                 }
-            ]
+            ],
+            newQuestion: {
+                text: "",
+                category: "Make a selection"
+            }
         }
     }
 
@@ -74,7 +78,7 @@ class QuestionModel extends EventEmitter {
         isActive = !isActive;
         this.state.questions[questionId].active = isActive;
 
-        this.emit("changedQuestion", this.state); // the state has changed, passed the new state as arg
+        this.emit("changedQuestion", this.state);
     }
 }
 

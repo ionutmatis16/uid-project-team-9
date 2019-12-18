@@ -1,14 +1,25 @@
 import React from 'react';
-import MyNavbar from "./navbar/MyNavbar";
 import "../../style/faq.css";
 import {Button, Card, CardBody, Collapse} from 'reactstrap';
 
-const FAQList = ({userModelState, loginUser, loginAdmin, logout, questions, toggleQuestion}) => (
+const FAQList = ({userModelState, questions, toggleQuestion}) => (
     <div>
 
         <div className="page-title text-center">
             <h1>Frequently Asked Questions</h1>
         </div>
+        {
+            userModelState.currentUser.role === "user" ?
+                <div>
+                    <button className="ask-question-button"
+                            onClick={() => window.location.assign("#/faq/add")}>
+                        Ask question
+                    </button>
+                </div>
+                :
+                ""
+        }
+
         <div className="questions-div">
             {
                 questions.map(question => (
@@ -17,12 +28,17 @@ const FAQList = ({userModelState, loginUser, loginAdmin, logout, questions, togg
                         <Button className="question-card"
                                 onClick={() => toggleQuestion(question.id)}>
                             {"    " + (question.id + 1) + ". " + question.text}
+                            <span>
                             {
                                 question.active ?
                                     <i className="fa fa-angle-up"/>
                                     :
                                     <i className="fa fa-angle-down"/>
                             }
+                                <span className="add-answer-button">
+                                +
+                            </span>
+                            </span>
                         </Button>
                         <Collapse isOpen={question.active}>
                             <Card>
