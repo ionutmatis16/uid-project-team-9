@@ -12,25 +12,38 @@ const FAQAdd = ({newQuestion, onChangeNewQuestion, onSubmitNewQuestion}) => (
         <div className="ask-question-main-div">
             <div className="new-question-element-div">
                 <p className="new-question-label">Your question</p>
-                <textarea className="new-question-text-area"
-                          placeholder="Type your question here"
-                          value={newQuestion.text}
-                          onChange={onChangeNewQuestion}/>
+                <textarea
+                    className={"new-question-text-area " + (newQuestion.textError === true ? "invalid-input" : "")}
+                    placeholder="Type your question here"
+                    value={newQuestion.text}
+                    onChange={e => onChangeNewQuestion("text", e.target.value)}/>
             </div>
             <div className="new-question-element-div">
                 <p className="new-question-label">Category</p>
-                <select>
-                    <option>Make a selection</option>
-                    <option>General</option>
-                    <option>Projects</option>
-                    <option>Funding</option>
+                <select className={newQuestion.categoryError === true ? "invalid-input" : ""}
+                        onChange={e => onChangeNewQuestion("category", e.target.value)}>
+                    <option value="">Make a selection</option>
+                    <option value="general">General</option>
+                    <option value="projects">Projects</option>
+                    <option value="funding">Funding</option>
                 </select>
             </div>
             <button className="ask-question-button submit-new-question"
-                    // onClick={}
-            >
+                    onClick={onSubmitNewQuestion}>
                 Submit
             </button>
+            {
+                newQuestion.textError === true ?
+                    <p className="invalid-message invalid-text">Invalid data</p>
+                    :
+                    ""
+            }
+            {
+                newQuestion.categoryError === true ?
+                    <p className="invalid-message invalid-category">Invalid selection</p>
+                    :
+                    ""
+            }
         </div>
     </div>
 );

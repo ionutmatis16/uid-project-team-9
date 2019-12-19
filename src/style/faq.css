@@ -5,6 +5,7 @@
 .questions-div {
     width: 100%;
     padding: 0 10%;
+    margin-bottom: 100px;
 }
 
 .question-card {
@@ -51,7 +52,7 @@
 }
 
 .ask-question-main-div {
-    margin: 0 35%;
+    margin: 0 33%;
 }
 
 .new-question-element-div {
@@ -74,7 +75,7 @@
     font-size: 20px;
     margin: 0;
     font-weight: bold;
-    width: 33%;
+    width: 45%;
 }
 
 select {
@@ -84,4 +85,24 @@ select {
 .submit-new-question {
     width: 100%;
     margin: 20px 0;
+}
+
+.invalid-input {
+    border: 2px red solid;
+}
+
+.invalid-message {
+    position: absolute;
+    font-size: 25px;
+    color: red;
+}
+
+.invalid-text {
+    left: 1050px;
+    top: 285px;
+}
+
+.invalid-category {
+    left: 1050px;
+    top: 368px;
 }

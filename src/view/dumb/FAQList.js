@@ -9,7 +9,7 @@ const FAQList = ({userModelState, questions, toggleQuestion}) => (
             <h1>Frequently Asked Questions</h1>
         </div>
         {
-            userModelState.currentUser.role === "user" ?
+            userModelState.currentUser.role !== "anonymous" ?
                 <div>
                     <button className="ask-question-button"
                             onClick={() => window.location.assign("#/faq/add")}>
@@ -29,15 +29,20 @@ const FAQList = ({userModelState, questions, toggleQuestion}) => (
                                 onClick={() => toggleQuestion(question.id)}>
                             {"    " + (question.id + 1) + ". " + question.text}
                             <span>
-                            {
-                                question.active ?
-                                    <i className="fa fa-angle-up"/>
-                                    :
-                                    <i className="fa fa-angle-down"/>
-                            }
-                                <span className="add-answer-button">
-                                +
-                            </span>
+                                {
+                                    question.active ?
+                                        <i className="fa fa-angle-up"/>
+                                        :
+                                        <i className="fa fa-angle-down"/>
+                                }
+                                {
+                                    userModelState.currentUser.role !== "anonymous" ?
+                                        <span className="add-answer-button">
+                                        +
+                                        </span>
+                                        :
+                                        ""
+                                }
                             </span>
                         </Button>
                         <Collapse isOpen={question.active}>

@@ -12,14 +12,16 @@ const mapModelStateToComponentState = (userModel, questionModel) => ({
 export default class SmartFAQAdd extends Component {
     constructor(props) {
         super(props);
+
+        questionModel.initNewQuestion();
         this.state = mapModelStateToComponentState(userModel, questionModel);
         this.listener = () =>
             this.setState(mapModelStateToComponentState(userModel, questionModel));
-        questionModel.addListener("changedQuestion", this.listener);
+        questionModel.addListener("changedNewQuestion", this.listener);
     }
 
     componentWillUnmount() {
-        questionModel.removeListener("changedQuestion", this.listener);
+        questionModel.removeListener("changedNewQuestion", this.listener);
     }
 
     render() {

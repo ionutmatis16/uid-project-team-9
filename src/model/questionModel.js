@@ -66,9 +66,12 @@ class QuestionModel extends EventEmitter {
                     ]
                 }
             ],
+            questionIndex: 6,
             newQuestion: {
                 text: "",
-                category: "Make a selection"
+                textError: false,
+                category: "",
+                categoryError: false
             }
         }
     }
@@ -79,6 +82,55 @@ class QuestionModel extends EventEmitter {
         this.state.questions[questionId].active = isActive;
 
         this.emit("changedQuestion", this.state);
+    };
+
+    addQuestion = (questionText) => {
+        this.state.questions.push({
+            id: this.state.questionIndex++,
+            text: questionText,
+            active: false,
+            answers: []
+        });
+
+        window.location.assign("#/faq");
+    };
+
+    initNewQuestion = () => {
+        this.onChangeNewQuestion("text", "");
+        this.onChangeNewQuestion("category", "");
+        this.onChangeNewQuestion("textError", false);
+        this.onChangeNewQuestion("categoryError", false);
+    };
+
+    onChangeNewQuestion = (property, value) => {
+        this.state = {
+            ...this.state,
+            newQuestion: {
+                ...this.state.newQuestion,
+                [property]: value
+            }
+        };
+
+        this.emit("changedNewQuestion", this.state);
+    };
+
+    onSubmitNewQuestion = () => {
+        this.onChangeNewQuestion("textError", false);
+        this.onChangeNewQuestion("categoryError", false);
+
+        if (this.state.newQuestion.text === "") {
+            this.onChangeNewQuestion("textError", true);
+        }
+
+        if (this.state.newQuestion.category === "") {
+            this.onChangeNewQuestion("categoryError", true);
+        }
+
+        this.emit("changedNewQuestion", this.state);
+
+        if (!this.state.newQuestion.textError && !this.state.newQuestion.categoryError) {
+            this.addQuestion(this.state.newQuestion.text);
+        }
     }
 }
 
