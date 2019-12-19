@@ -16,10 +16,12 @@ export default class SmartFAQList extends Component {
         this.listener = () =>
             this.setState(mapModelStateToComponentState(userModel, questionModel));
         questionModel.addListener("changedQuestion", this.listener);
+        questionModel.addListener("changedNewAnswer", this.listener);
     }
 
     componentWillUnmount() {
         questionModel.removeListener("changedQuestion", this.listener);
+        questionModel.removeListener("changedNewAnswer", this.listener);
     }
 
     render() {
@@ -32,7 +34,11 @@ export default class SmartFAQList extends Component {
 
                 <FAQList userModelState={this.state.userModelState}
                          questions={this.state.questionModelState.questions}
-                         toggleQuestion={questionModel.toggleQuestion}/>
+                         toggleQuestion={questionModel.toggleQuestion}
+                         openNewAnswer={questionModel.openNewAnswer}
+                         onSubmitNewAnswer={questionModel.onSubmitNewAnswer}
+                         onChangeNewAnswer={questionModel.onChangeNewAnswer}
+                         resetNewAnswer={questionModel.resetNewAnswer}/>
             </div>
         );
     }

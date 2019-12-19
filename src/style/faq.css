@@ -106,3 +106,45 @@ select {
     left: 1050px;
     top: 368px;
 }
+
+.new-answer-card-div {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.new-answer-textarea {
+    width: 900px;
+    height: 100%;
+    font-size: 20px;
+    border-radius: 5px;
+}
+
+.submit-new-answer {
+    background-color: #59626a;
+    color: white;
+    border-radius: 6px;
+    font-size: 15px;
+    padding: 5px 15px;
+    margin-bottom: 2px;
+}
+
+.new-answer-submit-div {
+    margin: 0 20px;
+}
+
+.new-answer-submit-div > button, p {
+    border: none;
+    text-align: center;
+}
+
+.invalid-new-answer {
+    font-size: 20px;
+    margin-bottom: 0;
+    color: red;
+    font-weight: bold;
+    text-align: center;
+}
+
+.close-new-answer {
+    cursor: pointer;
+}
