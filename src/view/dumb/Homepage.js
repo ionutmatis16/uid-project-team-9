@@ -10,12 +10,12 @@ const HomePage = ({userModelState, loginUser, loginAdmin, logout}) => (
         </div>
         <div className="main-content">
             <div className="main-description">
-                <p>
+                <span>
                     Public engagement in City budgeting is a new approach meant to
                     increase the levels of involvement and responsibility of the
                     citizens in the decisions taken to develop the Smart City they
                     are living in.
-                </p>
+                </span>
             </div>
             <div>
                 <img src={homepageImage} alt="Homepage"/>
