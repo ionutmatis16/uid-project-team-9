@@ -7,15 +7,15 @@
     justify-content: space-around;
 }
 
+.main-description {
+    text-align: justify;
+    font-size: 30px !important;
+}
+
 .main-content > div {
     width: 40%;
 }
 
 img {
     width: 100%;
-}
-
-p {
-    text-align: justify;
-    font-size: 35px;
 }

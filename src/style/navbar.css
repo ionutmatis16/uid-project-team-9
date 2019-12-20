@@ -18,6 +18,10 @@ span:hover {
     padding: 5px !important;
 }
 
+.nav-item:hover {
+    background-color: #edeeef;
+}
+
 .nav-link {
     color: inherit !important;
 }
