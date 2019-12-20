@@ -1,6 +1,5 @@
 import React from 'react';
 import "../../style/homepage.css";
-import homepageImage from "../../images/homepage.png";
 
 const HomePage = ({userModelState, loginUser, loginAdmin, logout}) => (
     <div>
@@ -18,7 +17,7 @@ const HomePage = ({userModelState, loginUser, loginAdmin, logout}) => (
                 </span>
             </div>
             <div>
-                <img src={homepageImage} alt="Homepage"/>
+                <img src={"/images/homepage.png"} alt="Homepage"/>
             </div>
         </div>
     </div>
