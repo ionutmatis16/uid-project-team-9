@@ -6,8 +6,11 @@ class UserModel extends EventEmitter {
         this.state = {
             currentUser: {
                 role: "anonymous"
-            }
-        }
+            },
+            myProjects: [],
+            votedProjects: [],
+            favoriteProjects: [],
+        };
     }
 
     loginUser = () => {
