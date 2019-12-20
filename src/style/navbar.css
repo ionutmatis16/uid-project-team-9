@@ -19,7 +19,7 @@ span:hover {
 }
 
 .nav-item:hover {
-    background-color: #edeeef !important;
+    background-color: #edeeef;
 }
 
 .nav-link {
