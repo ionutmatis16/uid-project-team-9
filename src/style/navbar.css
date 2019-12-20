@@ -27,9 +27,12 @@ span:hover {
 }
 
 .login-button {
-    background-color: #F8F9FA !important;
     border: none !important;
     color: black !important;
+}
+
+.navbar-nav button:hover {
+    background-color: #edeeef !important ;
 }
 
 .align-center {
