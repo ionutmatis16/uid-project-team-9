@@ -13,7 +13,7 @@ const FAQList = ({
         </div>
         {
             userModelState.currentUser.role !== "anonymous" ?
-                <div>
+                <div className="ask-question-button-div">
                     <button className="ask-question-button"
                             onClick={() => window.location.assign("#/faq/add")}>
                         Ask question

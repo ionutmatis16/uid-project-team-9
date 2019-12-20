@@ -31,9 +31,15 @@
     font-size: 30px !important;
 }
 
+.ask-question-button-div {
+    width: 100%;
+    padding: 0 10%;
+    display: flex;
+    justify-content: flex-end;
+}
+
 .ask-question-button {
     margin-bottom: 20px;
-    margin-left: 80%;
     padding: 6px 30px;
     background-color: #59626a;
     color: white;
@@ -98,12 +104,12 @@ select {
 }
 
 .invalid-text {
-    left: 1050px;
+    left: 70%;
     top: 285px;
 }
 
 .invalid-category {
-    left: 1050px;
+    left: 70%;
     top: 368px;
 }
 
