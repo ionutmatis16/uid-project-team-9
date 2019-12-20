@@ -3,55 +3,59 @@ span:hover {
 }
 
 .active {
-    background-color: #cbdce6 !important;
+    background-color: #cbdce6;
 }
 
 .navbar {
-    padding: 0 1rem !important;
+    padding: 0 1rem;
 }
 
 .bg-light {
-    background-color: #f1f2f3 !important;
+    background-color: #f1f2f3;
 }
 
 .nav-item {
-    padding: 5px !important;
+    padding: 5px;
+}
+
+.nav-item:hover {
+    background-color: #edeeef;
 }
 
 .nav-link {
-    color: inherit !important;
+    color: inherit;
 }
 
 .login-button {
-    background-color: #F8F9FA !important;
-    border: none !important;
-    color: black !important;
+    background-color: #F8F9FA;
+    border: none;
+    color: black;
 }
 
 .align-center {
-    display: flex !important;
-    justify-content: space-around !important;
+    display: flex;
+    justify-content: space-around;
 }
 
 .my-dropdown-button {
-    background-color: #F8F9FA !important;
-    border: none !important;
-    color: black !important;
+    background-color: #F8F9FA;
+    border: none;
+    color: black;
 }
 
 .my-dropdown-button:focus {
-    border: none !important;
-    box-shadow: none !important;
+    border: none;
+    box-shadow: none;
 }
 
 .my-dropdown-menu {
-    padding: 0 !important;
+    padding: 0;
 }
 
 .my-dropdown-menu > * {
-    border: 1px solid lightgray !important;
+    border: 1px solid lightgray;
 }
 
 .modal-open {
-    padding-right: 0 !important;
+    padding-right: 0;
 }
