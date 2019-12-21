@@ -15,7 +15,8 @@ class ProjectModel extends EventEmitter {
                     extendedDescription: "extend the descr",
                     nrOfVotes: 201,
                     favorite: false,
-                    voted: true
+                    voted: true,
+                    status: "Make a selection"
                 },
                 {
                     id: 1,
@@ -26,7 +27,8 @@ class ProjectModel extends EventEmitter {
                     extendedDescription: "extend the descr",
                     nrOfVotes: 76,
                     favorite: true,
-                    voted: false
+                    voted: false,
+                    status: "Make a selection"
                 },
                 {
                     id: 2,
@@ -37,7 +39,8 @@ class ProjectModel extends EventEmitter {
                     extendedDescription: "extend the descr",
                     nrOfVotes: 401,
                     favorite: false,
-                    voted: false
+                    voted: false,
+                    status: "Make a selection"
                 },
                 {
                     id: 3,
@@ -48,7 +51,8 @@ class ProjectModel extends EventEmitter {
                     extendedDescription: "extend the descr",
                     nrOfVotes: 97,
                     favorite: false,
-                    voted: false
+                    voted: false,
+                    status: "Finished"
                 },
                 {
                     id: 4,
@@ -59,7 +63,8 @@ class ProjectModel extends EventEmitter {
                     extendedDescription: "extend the descr",
                     nrOfVotes: 639,
                     favorite: false,
-                    voted: false
+                    voted: false,
+                    status: "Make a selection"
                 },
                 {
                     id: 5,
@@ -70,9 +75,10 @@ class ProjectModel extends EventEmitter {
                     extendedDescription: "extend the descr",
                     nrOfVotes: 21,
                     favorite: false,
-                    voted: false
+                    voted: false,
+                    status: "Make a selection"
                 },
-                {
+                /*{
                     id: 6,
                     name: "Parking Lot Tracker",
                     category: "Smart transport",
@@ -81,7 +87,8 @@ class ProjectModel extends EventEmitter {
                     extendedDescription: "extend the descr",
                     nrOfVotes: 140,
                     favorite: false,
-                    voted: false
+                    voted: false,
+                    status: "Make a selection"
                 },
                 {
                     id: 7,
@@ -92,10 +99,23 @@ class ProjectModel extends EventEmitter {
                     extendedDescription: "extend the descr",
                     nrOfVotes: 21,
                     favorite: false,
-                    voted: false
-                }
+                    voted: false,
+                    status: "Make a selection"
+                }*/
             ],
-            projectIndex: 8
+            projectIndex: 6,
+            search: {
+                category: "",
+                text: ""
+            },
+            updatedProject: {
+                id: -1,
+                name: "",
+                category: "",
+                smallDescription: "",
+                extendedDescription: "",
+                status: ""
+            }
         }
     }
 
@@ -127,7 +147,19 @@ class ProjectModel extends EventEmitter {
 
         userModel.addToVotedProjects(projectId);
         this.emit("changedProjectDetails", this.state);
-    }
+    };
+
+    onProjectSearchChange = (property, value) => {
+        this.state = {
+            ...this.state,
+            search: {
+                ...this.state.search,
+                [property]: value
+            }
+        };
+
+        this.emit("changedSearch", this.state);
+    };
 }
 
 
