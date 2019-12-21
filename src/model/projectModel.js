@@ -16,7 +16,7 @@ class ProjectModel extends EventEmitter {
                     nrOfVotes: 201,
                     favorite: false,
                     voted: true,
-                    status: "Make a selection"
+                    status: "Design phase"
                 },
                 {
                     id: 1,
