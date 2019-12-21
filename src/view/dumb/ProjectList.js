@@ -2,9 +2,14 @@ import React from 'react';
 import "../../style/projects.css";
 import ProjectThumbnail from "./ProjectThumbnail";
 
-const ProjectList = ({userModelState, projects, categories}) => (
+const ProjectList = ({userModelState, projects, categories, onProjectAddToFavorites}) => (
     <div className="projects-page-div">
-        <button className="propose-button">Propose a project</button>
+        {
+            userModelState.currentUser.role === "user" ?
+                <button className="propose-button green-button">Propose a project</button>
+                :
+                ""
+        }
         <div>
             <h1 className="projects-title">Projects</h1>
         </div>
@@ -27,7 +32,9 @@ const ProjectList = ({userModelState, projects, categories}) => (
             {
                 projects.map((project) => (
                     <div key={project.id}>
-                        <ProjectThumbnail project={project}/>
+                        <ProjectThumbnail project={project}
+                                          onProjectAddToFavorites={onProjectAddToFavorites}
+                                          userModelState={userModelState}/>
                     </div>
                 ))
             }

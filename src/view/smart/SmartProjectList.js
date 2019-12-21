@@ -17,12 +17,12 @@ export default class SmartProjectList extends Component {
         this.state = mapModelStateToComponentState(userModel, projectModel);
         this.listener = () => this.setState(mapModelStateToComponentState(userModel, projectModel));
         userModel.addListener("changeUser", this.listener);
-        // projectModel.addListener("changedProject", this.listener());
+        projectModel.addListener("changedProject", this.listener);
     }
 
     componentWillUnmount() {
         userModel.removeListener("changeUser", this.listener);
-        // projectModel.removeListener("changedProject", this.listener);
+        projectModel.removeListener("changedProject", this.listener);
     }
 
     render() {
@@ -35,7 +35,8 @@ export default class SmartProjectList extends Component {
 
                 <ProjectList userModelState={this.state.userModelState}
                              projects={this.state.projects}
-                             categories={this.state.categories}/>
+                             categories={this.state.categories}
+                             onProjectAddToFavorites={projectModel.onProjectAddToFavorites}/>
             </div>
         );
     }

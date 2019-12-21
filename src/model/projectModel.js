@@ -1,4 +1,5 @@
 import {EventEmitter} from "events";
+import userModel from "./userModel";
 
 class ProjectModel extends EventEmitter {
     constructor() {
@@ -14,7 +15,7 @@ class ProjectModel extends EventEmitter {
                     extendedDescription: "extend the descr",
                     nrOfVotes: 201,
                     favorite: false,
-                    voted: false
+                    voted: true
                 },
                 {
                     id: 1,
@@ -103,6 +104,29 @@ class ProjectModel extends EventEmitter {
         this.state.projects.forEach(project => categoriesSet.add(project.category));
 
         return Array.from(categoriesSet).sort((a, b) => a.localeCompare(b));
+    };
+
+    onProjectAddToFavorites = (event, projectId) => {
+        event.stopPropagation();
+        let project = this.state.projects[projectId];
+        project.favorite = !project.favorite;
+        userModel.addToFavorites(projectId);
+
+        this.emit("changedProject", this.state);
+    };
+
+    onProjectVote = (projectId) => {
+        let project = this.state.projects[projectId];
+        if (project.voted) {
+            project.nrOfVotes--;
+        } else {
+            project.nrOfVotes++;
+        }
+
+        project.voted = !project.voted;
+
+        userModel.addToVotedProjects(projectId);
+        this.emit("changedProjectDetails", this.state);
     }
 }
 
