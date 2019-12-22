@@ -2,7 +2,10 @@ import React from 'react';
 import "../../style/projects.css";
 import ProjectThumbnail from "./ProjectThumbnail";
 
-const ProjectList = ({userModelState, projects, categories, onProjectAddToFavorites}) => (
+const ProjectList = ({
+                         userModelState, projects, categories, onProjectAddToFavorites,
+                         onProjectSearchChange, querySearch
+                     }) => (
     <div className="projects-page-div">
         {
             userModelState.currentUser.role === "user" ?
@@ -15,18 +18,29 @@ const ProjectList = ({userModelState, projects, categories, onProjectAddToFavori
         </div>
         <div className="search-div">
             <p>Search a project</p>
-            <select>
-                <option>Make a selection</option>
+            <select onChange={event =>
+                onProjectSearchChange("category", event.target.value.toLowerCase().split(" ").join("_"))}>
+                <option value=""
+                        selected={querySearch.category === ""}>
+                    Make a selection
+                </option>
                 {
                     categories.map((category, index) => (
-                        <option key={index}>
+                        <option key={index}
+                                value={category}
+                                selected={category.toLowerCase().split(" ").join("_") === querySearch.category}>
                             {category}
                         </option>
                     ))
                 }
             </select>
-            <input placeholder="Search project by name"/>
-            <button>Search</button>
+            <input placeholder="Search project by name"
+                   value={querySearch.text}
+                   onChange={event => onProjectSearchChange("text", event.target.value)}/>
+            <button onClick={() =>
+                window.location.assign("#/projects?category=" + querySearch.category + "&text=" + querySearch.text)}>
+                Search
+            </button>
         </div>
         <div className="projects-list-div">
             {

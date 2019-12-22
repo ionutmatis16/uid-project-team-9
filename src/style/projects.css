@@ -188,6 +188,18 @@
     margin-top: 20px;
 }
 
+.extended-description > p {
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 0;
+}
+
+.extended-description > textarea {
+    width: 100%;
+    border-radius: 5px;
+    height: 150px;
+}
+
 .gray-button {
     height: 35px;
     width: 130px;
@@ -196,4 +208,72 @@
     background-color: #59626a;
     border: none;
 }
+
+.admin-project-details {
+    margin-top: 100px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.admin-project-details > textarea {
+    width: 65%;
+    height: 40px;
+    border-radius: 5px;
+    line-height: 32px;
+    font-size: 25px;
+    color: gray;
+}
+
+.admin-save-project {
+    width: 150px;
+}
+
+.admin-cancel-project {
+    border-radius: 5px;
+    width: 150px;
+    border: none;
+    color: white;
+    font-weight: 600;
+}
+
+.admin-nr-votes {
+    text-align: left;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.admin-change-status-div {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.admin-change-status-div > p:first-of-type {
+    margin-top: 0;
+    height: 15%;
+    width: 65%;
+}
+
+.admin-change-status-div > p:last-of-type {
+    margin-top: 0;
+    height: 15%;
+    width: 10%;
+}
+
+.admin-change-status-div > select {
+    height: 13%;
+    border-radius: 5px;
+    width: 25%;
+}
+
+.admin-change-status-div > textarea {
+    width: 100%;
+    height: 85%;
+    border-radius: 5px;
+}
+
+.invalid-admin-update {
+    border: 2px solid red;
+}
+
 
