@@ -6,6 +6,7 @@ const AdminProjectDetails = ({projectToUpdate, onProjectUpdate, onProjectUpdateS
     <div className="project-details-div">
         <div className="admin-project-details">
             <textarea className={(projectToUpdate.validName ? "" : "invalid-admin-update")}
+                      placeholder="Type the name of the project"
                       value={projectToUpdate.name}
                       onChange={event => onProjectUpdate("name", event.target.value)}/>
             <button className="green-button admin-save-project"
