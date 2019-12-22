@@ -1,0 +1,199 @@
+.projects-page-div {
+    margin: 0 10%;
+}
+
+.projects-title {
+    text-align: center;
+    margin: 50px 0 100px;
+}
+
+.green-button {
+    background-color: #77D353;
+    border-radius: 5px;
+    width: 192px;
+    height: 40px;
+    border: none;
+    color: white;
+    font-weight: 600;
+}
+
+.orange-button {
+    background-color: #FFBA5C;
+}
+
+.propose-button {
+    position: absolute;
+    left: 10%;
+    top: 110px;
+}
+
+.search-div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.search-div > p {
+    font-size: 20px;
+    font-weight: bold;
+    width: 15%;
+    margin-top: 0.3rem;
+    margin-bottom: 0.3rem;
+}
+
+.search-div > select {
+    width: 25%;
+    border-radius: 6px;
+}
+
+.search-div > input {
+    width: 25%;
+    border-radius: 6px;
+    border: 1px solid gray;
+}
+
+.search-div > button {
+    width: 15%;
+    color: white;
+    border-radius: 6px;
+    background-color: #59626a;
+    border: none;
+}
+
+.projects-list-div {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 100px;
+}
+
+.project-thumbnail-div {
+    display: flex;
+    justify-content: space-between;
+    width: 500px;
+    margin-bottom: 30px;
+    padding-top: 10px;
+    padding-left: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.project-thumbnail-div:hover {
+    background-color: #cbdce6;
+}
+
+.visual-info {
+    width: 33%
+}
+
+.visual-info > img {
+    background-size: 100%;
+    border-radius: 100%;
+    height: 130px;
+    width: 130px;
+    float: left;
+    margin-left: -35px;
+}
+
+.visual-info > span:first-of-type {
+    float: left;
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 50%;
+    padding: 5px;
+    z-index: 1;
+    position: sticky;
+    width: 37px;
+    height: 37px;
+    text-align: center;
+    line-height: 26px;
+    font-weight: bold;
+    cursor: inherit;
+}
+
+.visual-info > span:last-of-type {
+    float: right;
+    margin-left: -50px;
+    margin-top: 80px;
+    color: red;
+    font-size: 40px;
+    background-color: white;
+    border-radius: 100%;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    line-height: 60px;
+}
+
+.thumbnail-text-info {
+    width: 75%;
+}
+
+.thumbnail-text-info > div:first-of-type {
+    font-weight: bold;
+    font-size: 20px;
+    height: 22px;
+}
+
+.thumbnail-text-info > div:last-of-type {
+    font-style: italic;
+    font-size: 18px;
+    height: 35px;
+}
+
+.project-details-div {
+    padding: 0 10%;
+}
+
+.nr-of-votes {
+    text-align: right;
+    margin-top: 30px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.project-details-title {
+    text-align: left;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.vote-button {
+    float: right;
+    height: 35px;
+    width: 130px;
+}
+
+.project-details-basic-info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.project-details-basic-info > img {
+    width: 30%;
+    border-radius: 10px;
+}
+
+.project-details-basic-info > div {
+    width: 68%;
+}
+
+.short-description {
+    margin-top: 50px;
+    text-align: left;
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 0;
+}
+
+.extended-description {
+    margin-top: 20px;
+}
+
+.gray-button {
+    height: 35px;
+    width: 130px;
+    color: white;
+    border-radius: 6px;
+    background-color: #59626a;
+    border: none;
+}
+
