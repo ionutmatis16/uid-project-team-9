@@ -5,7 +5,7 @@ class UserModel extends EventEmitter {
         super();
         this.state = {
             currentUser: {
-                role: "admin"
+                role: "anonymous"
             },
             myProjects: [],
             votedProjects: [0],
@@ -36,7 +36,7 @@ class UserModel extends EventEmitter {
         };
 
         this.emit("changeUser", this.state);
-        window.location.assign("#/home");
+        window.location.assign("#/");
     };
 
     addToFavorites = (projectId) => {

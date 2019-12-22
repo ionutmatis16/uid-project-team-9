@@ -9,9 +9,9 @@ const AnonymousNavbar = ({loginUser, loginAdmin}) => (
 
         <div className="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
             <ul className="navbar-nav mr-auto">
-                <li className={"nav-item " + (window.location.hash.includes("home") ? "active" : "")}>
+                <li className={"nav-item " + (window.location.hash === "#/" ? "active" : "")}>
                     <span className="nav-link"
-                          onClick={() => window.location.assign("#/home")}>
+                          onClick={() => window.location.assign("#/")}>
                         Home
                     </span>
                 </li>

@@ -12,7 +12,7 @@ function App() {
         <div className="App">
             <HashRouter>
                 <Switch>
-                    <Route exact component={SmartHomepage} path="/home"/>
+                    <Route exact component={SmartHomepage} path="/"/>
                     <Route exact component={SmartFAQList} path="/faq"/>
                     <Route exact component={SmartFAQAdd} path="/faq/add"/>
                     <Route exact component={SmartProjectList} path="/projects"/>
