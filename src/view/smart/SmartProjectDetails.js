@@ -6,7 +6,8 @@ import ProjectDetails from "../dumb/ProjectDetails";
 
 const mapModelStateToComponentState = (userModel, projectModel, props) => ({
     userModelState: userModel.state,
-    project: getProjectById(projectModel.state.projects, props.match.params.id)
+    project: getProjectById(projectModel.state.projects, props.match.params.id),
+    projectToUpdate: projectModel.state.projectToUpdate
 });
 
 function getProjectById(projects, id) {
@@ -20,16 +21,20 @@ function getProjectById(projects, id) {
 export default class SmartProjectDetails extends Component {
     constructor(props) {
         super(props);
+        projectModel.setProjectToUpdate(props.match.params.id);
 
         this.state = mapModelStateToComponentState(userModel, projectModel, props);
         this.listener = () => this.setState(mapModelStateToComponentState(userModel, projectModel, props));
         userModel.addListener("changeUser", this.listener);
         projectModel.addListener("changedProjectDetails", this.listener);
+
+        projectModel.addListener("changedUpdatedProject", this.listener);
     }
 
     componentWillUnmount() {
         userModel.removeListener("changeUser", this.listener);
         projectModel.removeListener("changedProjectDetails", this.listener);
+        projectModel.removeListener("changedUpdatedProject", this.listener);
     }
 
     render() {
@@ -42,7 +47,11 @@ export default class SmartProjectDetails extends Component {
 
                 <ProjectDetails userModelState={this.state.userModelState}
                                 project={this.state.project}
-                                onProjectVote={projectModel.onProjectVote}/>
+                                projectToUpdate={this.state.projectToUpdate}
+                                onProjectVote={projectModel.onProjectVote}
+                                onProjectUpdate={projectModel.onProjectUpdateChange}
+                                onProjectUpdateSave={projectModel.onProjectUpdateSave}
+                                onProjectUpdateCancel={projectModel.onProjectUpdateCancel}/>
             </div>
         );
     }

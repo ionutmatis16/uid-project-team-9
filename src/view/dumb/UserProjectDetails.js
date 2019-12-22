@@ -34,6 +34,7 @@ const UserProjectDetails = ({userModelState, project, onProjectVote}) => (
             </div>
         </div>
         <div className="extended-description">
+            <p>Extended description</p>
             {project.extendedDescription}
         </div>
         <button className="vote-button gray-button"

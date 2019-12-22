@@ -108,13 +108,20 @@ class ProjectModel extends EventEmitter {
                 category: "",
                 text: ""
             },
-            updatedProject: {
+            projectToUpdate: {
                 id: -1,
                 name: "",
                 category: "",
                 smallDescription: "",
                 extendedDescription: "",
-                status: ""
+                nrOfVotes: -1,
+                favorite: false,
+                voted: false,
+                status: "",
+                validName: true,
+                validSmallDescription: true,
+                validExtendedDescription: true,
+                validStatus: true
             }
         }
     }
@@ -160,8 +167,85 @@ class ProjectModel extends EventEmitter {
 
         this.emit("changedSearch", this.state);
     };
-}
 
+    setProjectToUpdate = (projectId) => {
+        let foundProject = this.state.projects[parseInt(projectId)];
+
+        this.state.projectToUpdate = {
+            ...foundProject,
+            validName: true,
+            validSmallDescription: true,
+            validExtendedDescription: true,
+            validStatus: true
+        };
+    };
+
+    onProjectUpdateChange = (property, value) => {
+        this.state = {
+            ...this.state,
+            projectToUpdate: {
+                ...this.state.projectToUpdate,
+                [property]: value
+            }
+        };
+
+        this.emit("changedUpdatedProject", this.state);
+    };
+
+    projectUpdateHasValidField = (property, invalidValue) => {
+        if (this.state.projectToUpdate[property] === invalidValue) {
+            return false;
+        }
+
+        return true;
+    };
+
+    onProjectUpdateSave = () => {
+        let validName = this.projectUpdateHasValidField("name", "");
+        let validSelection = this.projectUpdateHasValidField("status", "Make a selection");
+        let validSmallDescription = this.projectUpdateHasValidField("smallDescription", "");
+        let validExtendedDescription = this.projectUpdateHasValidField("extendedDescription", "");
+
+        this.onProjectUpdateChange("validName", validName);
+        this.onProjectUpdateChange("validStatus", validSelection);
+        this.onProjectUpdateChange("validSmallDescription", validSmallDescription);
+        this.onProjectUpdateChange("validExtendedDescription", validExtendedDescription);
+
+        if (validName && validSelection && validSmallDescription && validExtendedDescription) {
+            let projectId = this.state.projectToUpdate.id;
+            this.state.projects[projectId] = this.state.projectToUpdate;
+
+            this.emit("changedUpdatedProject", this.state);
+            window.location.assign("#/projects");
+        }
+
+        this.emit("changedUpdatedProject", this.state);
+    };
+
+    onProjectUpdateCancel = () => {
+        this.state = {
+            ...this.state,
+            projectToUpdate: {
+                id: -1,
+                name: "",
+                category: "",
+                smallDescription: "",
+                extendedDescription: "",
+                nrOfVotes: -1,
+                favorite: false,
+                voted: false,
+                status: "",
+                validName: true,
+                validSmallDescription: true,
+                validExtendedDescription: true,
+                validStatus: true
+            }
+        };
+
+        this.emit("changedUpdatedProject", this.state);
+        window.location.assign("#/projects");
+    }
+}
 
 const projectModel = new ProjectModel();
 

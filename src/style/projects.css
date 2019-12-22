@@ -188,6 +188,18 @@
     margin-top: 20px;
 }
 
+.extended-description > p {
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 0;
+}
+
+.extended-description > textarea {
+    width: 100%;
+    border-radius: 5px;
+    height: 150px;
+}
+
 .gray-button {
     height: 35px;
     width: 130px;
@@ -238,31 +250,30 @@
 
 .admin-change-status-div > p:first-of-type {
     margin-top: 0;
-    height: 20%;
+    height: 15%;
     width: 65%;
 }
 
 .admin-change-status-div > p:last-of-type {
     margin-top: 0;
-    height: 20%;
+    height: 15%;
     width: 10%;
 }
 
 .admin-change-status-div > select {
-    height: 30px;
+    height: 13%;
     border-radius: 5px;
     width: 25%;
 }
 
 .admin-change-status-div > textarea {
     width: 100%;
-    height: 80%;
+    height: 85%;
+    border-radius: 5px;
 }
 
-.admin-extended-description > textarea {
-    margin-top: 20px;
-    width: 100%;
-    height: 100%;
+.invalid-admin-update {
+    border: 2px solid red;
 }
 
 

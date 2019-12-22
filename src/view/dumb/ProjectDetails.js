@@ -3,12 +3,18 @@ import "../../style/projects.css";
 import AdminProjectDetails from "./AdminProjectDetails";
 import UserProjectDetails from "./UserProjectDetails";
 
-const ProjectDetails = ({userModelState, project, onProjectVote}) => (
+const ProjectDetails = ({
+                            userModelState, project, projectToUpdate, onProjectVote, onProjectUpdate,
+                            onProjectUpdateSave, onProjectUpdateCancel
+                        }) => (
     <div>
         {
             userModelState.currentUser.role === "admin" ?
-                <AdminProjectDetails userModelState={userModelState}
-                                     project={project}/>
+                <AdminProjectDetails projectToUpdate={projectToUpdate}
+                                     onProjectUpdate={onProjectUpdate}
+                                     onProjectUpdateSave={onProjectUpdateSave}
+                                     onProjectUpdateCancel={onProjectUpdateCancel}
+                />
                 :
                 <UserProjectDetails userModelState={userModelState}
                                     project={project}
