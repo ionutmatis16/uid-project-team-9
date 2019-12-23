@@ -8,9 +8,9 @@ const AdminNavbar = ({logout}) => (
 
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav mr-auto">
-                <li className={"nav-item " + (window.location.hash.includes("home") ? "active" : "")}>
+                <li className={"nav-item " + (window.location.hash === "#/" ? "active" : "")}>
                     <span className="nav-link"
-                          onClick={() => window.location.assign("#/home")}>
+                          onClick={() => window.location.assign("#/")}>
                         Home
                     </span>
                 </li>
