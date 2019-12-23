@@ -4,3 +4,6 @@
 .aboutCard{
     height: 100%;
 }
+.cardText{
+    font-size: small;
+}

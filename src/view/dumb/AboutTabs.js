@@ -12,7 +12,7 @@ const AboutTabs = ({activeTab}) => (
                     <Col sm="6">
                         <Card className={"aboutCard"} body >
                             <CardTitle><h4>What is participative budgeting?</h4></CardTitle>
-                            <CardText>
+                            <CardText className={"cardText"}>
                                 Participative budgeting is a budgeting process under which those people impacted by a budget are actively involved
                                 in the budget creation process. This bottom-up approach to budgeting tends to create budgets that are more
                                 achievable than are top-down budgets that are imposed on a company by senior management, with much less participation
@@ -36,7 +36,7 @@ const AboutTabs = ({activeTab}) => (
                     <Col sm="6">
                         <Card body className={"aboutCard"}>
                             <CardTitle><h4>Why should you get involved?</h4></CardTitle>
-                            <CardText>
+                            <CardText className={"cardText"}>
                                 By giving communities real decision-making power in a collaborative process,
                                 participatory budgeting can strengthen ties between citizens and officials.
                                 First implemented in Brazil in 1989, it has been employed by more than 1,500
