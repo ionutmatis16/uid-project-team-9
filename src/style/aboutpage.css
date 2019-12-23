@@ -1,9 +1,17 @@
 .tabContent {
     width:95%;
+    margin-top: 10px;
+    margin-left: 20px;
+    padding-top: 15px;
 }
 .aboutCard{
     height: 100%;
 }
 .cardText{
     font-size: small;
+}
+.cardImage{
+    height: 300px;
+    width: 450px ;
+
 }

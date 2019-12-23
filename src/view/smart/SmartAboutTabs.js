@@ -9,11 +9,16 @@ export default class SmartAboutTabs  extends Component {
 
     constructor(props){
         super(props);
-        this.state = {activeTab:'1'};
+        this.state = {activeTab:'1', imageSource:'/images/logIn.png'};
+
     }
 
     toggle(tab) {
         if (this.state.activeTab !== tab) this.setState({activeTab:tab});
+    }
+
+    changeImageSource = (src) =>{
+       this.setState({imageSource:src});
     }
 
     render() {
@@ -62,7 +67,7 @@ export default class SmartAboutTabs  extends Component {
                     </NavLink>
                 </NavItem>
             </Nav>
-            <AboutTabs activeTab={this.state.activeTab}/>
+            <AboutTabs activeTab={this.state.activeTab} imageSource={this.state.imageSource} changeImgSource={this.changeImageSource}/>
 
         </div>
         );
