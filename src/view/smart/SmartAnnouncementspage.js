@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import userModel from "../../model/userModel";
-import MyNavbar from "./SmartHomepage";
+import announcementsModel from "../../model/announcementModel";
+import AnnouncementList from "../dumb/AnnouncementsList";
+import MyNavbar from "../dumb/navbar/MyNavbar";
 
 const mapModelStateToComponentState = (userModel) => ({
     userModelState: userModel.state
@@ -27,6 +29,8 @@ export default class SmartAnnouncementspage extends Component {
                           loginUser={userModel.loginUser}
                           loginAdmin={userModel.loginAdmin}
                           logout={userModel.logout}/>
+                <AnnouncementList userModelState={this.state.userModelState}
+                                  announcements={announcementsModel.state.announcements}/>
             </div>
         );
     }
