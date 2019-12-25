@@ -6,8 +6,11 @@ class UserModel extends EventEmitter {
         this.state = {
             currentUser: {
                 role: "anonymous"
-            }
-        }
+            },
+            myProjects: [],
+            votedProjects: [0],
+            favoriteProjects: [1],
+        };
     }
 
     loginUser = () => {
@@ -33,7 +36,38 @@ class UserModel extends EventEmitter {
         };
 
         this.emit("changeUser", this.state);
-        window.location.assign("#/home");
+        window.location.assign("#/");
+    };
+
+    addToFavorites = (projectId) => {
+        this.addToArray(projectId, "favoriteProjects");
+    };
+
+    addToVotedProjects = (projectId) => {
+        this.addToArray(projectId, "votedProjects");
+    };
+
+    addToArray(projectId, array) {
+        let projectArray = this.state[array];
+
+        if (projectArray.includes(projectId)) {
+            let elemIndex = projectArray.indexOf(projectId);
+            projectArray.splice(elemIndex, 1);
+        } else {
+            projectArray.push(projectId);
+        }
+
+        projectArray = projectArray.sort((a, b) => a - b);
+
+        this.state = {
+            ...this.state,
+            [array]: projectArray
+        };
+
+        console.log(array);
+        console.log(projectArray);
+
+        this.emit("changeUser", this.state);
     }
 }
 
