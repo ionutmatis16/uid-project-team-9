@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import HomePage from "../dumb/Homepage";
 import userModel from "../../model/userModel";
 import MyNavbar from "../dumb/navbar/MyNavbar";
-import AccessibilityButton from '../dumb/AccessibilityButton';
 
 const mapModelStateToComponentState = (userModel) => ({
     userModelState: userModel.state
@@ -28,8 +27,6 @@ export default class SmartHomepage extends Component {
                     loginUser={userModel.loginUser}
                     loginAdmin={userModel.loginAdmin}
                     logout={userModel.logout} />
-                    
-                <AccessibilityButton />
 
                 <HomePage userModelState={this.state.userModelState} />
             </div>

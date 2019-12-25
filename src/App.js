@@ -7,6 +7,7 @@ import SmartProjectDetails from "./view/smart/SmartProjectDetails";
 import SmartFAQList from "./view/smart/SmartFAQList";
 import SmartFAQAdd from "./view/smart/SmartFAQAdd";
 import SmartFeedback from './view/smart/SmartFeedback';
+import AccessibilityButton from "./view/dumb/AccessibilityButton";
 
 function App() {
     return (
@@ -22,6 +23,7 @@ function App() {
 
                 </Switch>
             </HashRouter>
+            <AccessibilityButton />
         </div>
     );
 }
