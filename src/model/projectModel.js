@@ -16,7 +16,9 @@ class ProjectModel extends EventEmitter {
                     nrOfVotes: 201,
                     favorite: false,
                     voted: true,
-                    status: "Design phase"
+                    status: "Design phase",
+                    viewed: 301,
+                    rating: 4
                 },
                 {
                     id: 1,
@@ -28,7 +30,9 @@ class ProjectModel extends EventEmitter {
                     nrOfVotes: 76,
                     favorite: true,
                     voted: false,
-                    status: "Make a selection"
+                    status: "Make a selection",
+                    viewed: 501,
+                    rating: 5
                 },
                 {
                     id: 2,
@@ -40,7 +44,9 @@ class ProjectModel extends EventEmitter {
                     nrOfVotes: 401,
                     favorite: false,
                     voted: false,
-                    status: "Make a selection"
+                    status: "Make a selection",
+                    viewed: 1,
+                    rating: 4
                 },
                 {
                     id: 3,
@@ -52,7 +58,9 @@ class ProjectModel extends EventEmitter {
                     nrOfVotes: 97,
                     favorite: false,
                     voted: false,
-                    status: "Finished"
+                    status: "Finished",
+                    viewed: 0,
+                    rating: 2
                 },
                 {
                     id: 4,
@@ -64,7 +72,9 @@ class ProjectModel extends EventEmitter {
                     nrOfVotes: 639,
                     favorite: false,
                     voted: false,
-                    status: "Make a selection"
+                    status: "Make a selection",
+                    viewed: 37,
+                    rating: 4
                 },
                 {
                     id: 5,
@@ -76,7 +86,9 @@ class ProjectModel extends EventEmitter {
                     nrOfVotes: 21,
                     favorite: false,
                     voted: false,
-                    status: "Make a selection"
+                    status: "Make a selection",
+                    viewed: 55,
+                    rating: 1
                 },
                 /*{
                     id: 6,
@@ -88,7 +100,9 @@ class ProjectModel extends EventEmitter {
                     nrOfVotes: 140,
                     favorite: false,
                     voted: false,
-                    status: "Make a selection"
+                    status: "Make a selection",
+                    viewed: 301,
+                    rating: 4
                 },
                 {
                     id: 7,
@@ -100,7 +114,9 @@ class ProjectModel extends EventEmitter {
                     nrOfVotes: 21,
                     favorite: false,
                     voted: false,
-                    status: "Make a selection"
+                    status: "Make a selection",
+                    viewed: 301,
+                    rating: 3
                 }*/
             ],
             projectIndex: 6,
@@ -121,10 +137,26 @@ class ProjectModel extends EventEmitter {
                 validName: true,
                 validSmallDescription: true,
                 validExtendedDescription: true,
-                validStatus: true
+                validStatus: true,
+                viewed: -1,
+                rating: -1
             }
         }
     }
+
+    getRating = (id) => {
+        let i;
+        let ratingResult='';
+        let project;
+        for (i=0; i<this.state.projects.length; i++){
+            if (id === this.state.projects[i].id)
+                project = this.state.projects[i];
+        }
+        for (i=0; i<project.rating; i++){
+            ratingResult += '★';
+        }
+        return ratingResult + ' ' + project.rating + '/5';
+    };
 
     getAllCategories = () => {
         let categoriesSet = new Set();
@@ -238,7 +270,9 @@ class ProjectModel extends EventEmitter {
                 validName: true,
                 validSmallDescription: true,
                 validExtendedDescription: true,
-                validStatus: true
+                validStatus: true,
+                viewed: -1,
+                rating: -1
             }
         };
 
