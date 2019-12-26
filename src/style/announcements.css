@@ -104,3 +104,61 @@
 .thumbnail-text-info-name{
     height: 50px !important;
 }
+
+.announcement-details-div {
+    padding: 0 10%;
+}
+
+.announcement-details-title {
+    text-align: left;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+
+.announcement-details-basic-info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.announcement-details-basic-info > img {
+    width: 30%;
+    border-radius: 10px;
+}
+
+.announcement-details-basic-info > div {
+    width: 68%;
+}
+
+.short-description {
+    margin-top: 50px;
+    text-align: left;
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 0;
+}
+
+.extended-description {
+    margin-top: 20px;
+}
+
+.extended-description > p {
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 0;
+}
+
+.extended-description > textarea {
+    width: 100%;
+    border-radius: 5px;
+    height: 150px;
+}
+
+.gray-button {
+    height: 35px;
+    width: 130px;
+    color: white;
+    border-radius: 6px;
+    background-color: #59626a;
+    border: none;
+}

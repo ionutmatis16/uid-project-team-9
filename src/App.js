@@ -7,6 +7,7 @@ import SmartProjectDetails from "./view/smart/SmartProjectDetails";
 import SmartFAQList from "./view/smart/SmartFAQList";
 import SmartFAQAdd from "./view/smart/SmartFAQAdd";
 import SmartAnnouncementspage from "./view/smart/SmartAnnouncementspage";
+import SmartAnnouncementDetails from "./view/smart/SmartAnnouncementDetails";
 
 function App() {
     return (
@@ -19,6 +20,8 @@ function App() {
                     <Route exact component={SmartProjectList} path="/projects"/>
                     <Route exact component={SmartProjectDetails} path="/projects/:id"/>
                     <Route exact component={SmartAnnouncementspage} path="/announcements"/>
+                    <Route exact component={SmartAnnouncementDetails} path="/announcements/:id"/>
+
                 </Switch>
             </HashRouter>
         </div>
