@@ -54,7 +54,7 @@ const UserNavbar = ({logout}) => (
                         </DropdownToggle>
                         <DropdownMenu className="my-dropdown-menu">
                             <DropdownItem>My projects</DropdownItem>
-                            <DropdownItem>Voted projects</DropdownItem>
+                            <DropdownItem onClick={() => window.location.assign("#/voted")}>Voted projects</DropdownItem>
                             <DropdownItem>Favorite projects</DropdownItem>
                             <DropdownItem>Settings</DropdownItem>
                         </DropdownMenu>

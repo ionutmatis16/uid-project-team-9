@@ -27,36 +27,14 @@
     top: 110px;
 }
 
-.search-div {
-    display: flex;
-    justify-content: space-between;
+.voted-search-div {
+    text-align: center;
 }
 
-.search-div > p {
-    font-size: 20px;
-    font-weight: bold;
-    width: 15%;
-    margin-top: 0.3rem;
-    margin-bottom: 0.3rem;
-}
-
-.search-div > select {
-    width: 25%;
-    border-radius: 6px;
-}
-
-.search-div > input {
+.voted-search-div > input {
     width: 25%;
     border-radius: 6px;
     border: 1px solid gray;
-}
-
-.search-div > button {
-    width: 15%;
-    color: white;
-    border-radius: 6px;
-    background-color: #59626a;
-    border: none;
 }
 
 .projects-list-div {
@@ -276,4 +254,52 @@
     border: 2px solid red;
 }
 
+.my-visual-info {
+    margin-bottom: 10px;
+}
+
+.my-visual-info > img {
+    background-size: 100%;
+    height: 300px;
+    width: 400px;
+    float: left;
+}
+
+.my-thumbnail-text-info {
+    position: relative;
+    margin-right: 10px;
+}
+
+.my-background > img {
+    height: 300px;
+}
+
+.voted-text {
+    position: absolute;
+    text-align: center;
+    top: 40%;
+    width: 90%;
+    left: 8px;
+    color: aliceblue;
+    font-size: 20px;
+}
+
+.my-project-thumbnail-div {
+    display: flex;
+    justify-content: space-between;
+    width: 600px;
+    margin-bottom: 30px;
+    padding-top: 10px;
+    padding-left: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.my-project-thumbnail-div:hover {
+    background-color: #cbdce6;
+}
+
+.my-projects-page-div {
+    margin: 0 5%;
+}
 

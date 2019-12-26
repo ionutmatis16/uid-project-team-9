@@ -7,7 +7,7 @@ class UserModel extends EventEmitter {
             currentUser: {
                 role: "anonymous"
             },
-            myProjects: [],
+            myProjects: [1,2,3],
             votedProjects: [0],
             favoriteProjects: [1],
         };
