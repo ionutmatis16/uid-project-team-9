@@ -260,7 +260,7 @@ class ProjectModel extends EventEmitter {
     extractFilename(path) {
         if (path.substr(0, 12) === "C:\\fakepath\\")
             return path.substr(12); // modern browser
-        var x;
+        let x;
         x = path.lastIndexOf('/');
         if (x >= 0) // Unix-based path
             return path.substr(x + 1);

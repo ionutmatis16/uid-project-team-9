@@ -44,7 +44,6 @@ const ProjectProposal = ({userModelState, categories, projectModel}) => (
                         <FormGroup>
                             <Label for="projectImage">Image</Label>
                             <Input type="file" name="image" id="projectImage"/>
-
                         </FormGroup>
                     </Form>
                     <Button onClick={() => {
