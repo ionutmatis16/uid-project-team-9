@@ -245,6 +245,30 @@ class ProjectModel extends EventEmitter {
         this.emit("changedUpdatedProject", this.state);
         window.location.assign("#/projects");
     }
+
+    addProject(project) {
+        project.id = this.state.projectIndex;
+        project.nrOfVotes = 0;
+        project.voted = false;
+        project.favorite = false;
+        project.status = "";
+        this.state.projectIndex = this.state.projectIndex + 1;
+        this.state.projects.push(project);
+        console.log(this.state.projects);
+    }
+
+    extractFilename(path) {
+        if (path.substr(0, 12) === "C:\\fakepath\\")
+            return path.substr(12); // modern browser
+        let x;
+        x = path.lastIndexOf('/');
+        if (x >= 0) // Unix-based path
+            return path.substr(x + 1);
+        x = path.lastIndexOf('\\');
+        if (x >= 0) // Windows-based path
+            return path.substr(x + 1);
+        return path; // just the file name
+    }
 }
 
 const projectModel = new ProjectModel();
