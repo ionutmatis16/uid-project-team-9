@@ -168,3 +168,22 @@
     background-color: #59626a;
     border: none;
 }
+
+
+.invalid-admin-update {
+    border: 2px solid red;
+}
+
+.proposeFormDiv {
+    width: 70%;
+    margin-left: 170px;
+    margin-top: 25px;
+}
+
+.validationFailed {
+    border: 2px solid red !important;
+}
+
+.detailedDescriptionInput {
+    height: 170px !important;
+}

@@ -8,8 +8,7 @@ import projectModel from "../../model/projectModel";
 
 const mapModelStateToComponentState = (userModel, announcementModel, props) => ({
     userModelState: userModel.state,
-    announcement: getAnnouncementById(announcementModel.state.announcements, props.match.params.id),
-   // projectToUpdate: projectModel.state.projectToUpdate
+    announcement: getAnnouncementById(announcementModel.state.announcements, props.match.params.id)
 });
 
 function getAnnouncementById(announcements, id) {
@@ -23,7 +22,6 @@ function getAnnouncementById(announcements, id) {
 export default class SmartAnnouncementDetails extends Component{
     constructor(props){
         super(props);
-        //announcementModel.setAnnouncementToUpdate(props.match.params.id)
 
         this.state = mapModelStateToComponentState(userModel, announcementModel, props);
         this.listener = () => this.setState(mapModelStateToComponentState(userModel, projectModel, props));

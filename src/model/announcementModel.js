@@ -23,8 +23,15 @@ class AnnouncementModel {
                     "metal, cardboard, paper and glass. As a warning, plastic/cardboard items should not have food stains on them. Styrofoam isn't recyclable, and neither are mirrors, electronic waste, chemical containers " +
                     ", plastic bags, scrap metals, etc. Should these rules not be followed, the batch of recycled items could be considered contaminated, and thus all items will not be accepted for recycling."
             }
-            ]
+            ],
+            projectIndex:2
         }
+    }
+    addAnnouncement(announcement) {
+        announcement.id = this.state.projectIndex;
+        this.state.projectIndex = this.state.projectIndex + 1;
+        this.state.announcements.push(announcement);
+        console.log(this.state.announcements);
     }
 }
 const announcementModel = new AnnouncementModel();

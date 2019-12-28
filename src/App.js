@@ -12,6 +12,7 @@ import SmartProjectProposal from "./view/smart/SmartProjectProposal";
 import SmartFeedback from './view/smart/SmartFeedback';
 import AccessibilityButton from "./view/dumb/AccessibilityButton";
 import SmartProjectApproval from "./view/smart/SmartProjectApproval";
+import SmartAddAnnouncement from "./view/smart/SmartAddAnnouncement";
 
 function App() {
     return (
@@ -25,6 +26,7 @@ function App() {
                     <Route exact component={SmartProjectProposal} path="/projects/new"/>
                     <Route exact component={SmartProjectDetails} path="/projects/:id"/>
                     <Route exact component={SmartAnnouncementspage} path="/announcements"/>
+                    <Route exact component={SmartAddAnnouncement} path="/announcements/new"/>
                     <Route exact component={SmartAnnouncementDetails} path="/announcements/:id"/>
                     <Route exact component={SmartFeedback} path="/feedback"/>
                     <Route exact component={SmartProjectApproval} path="/project-approval"/>
