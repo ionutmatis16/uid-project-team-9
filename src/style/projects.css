@@ -281,3 +281,11 @@
     margin-left: 170px;
     margin-top: 25px;
 }
+
+.validationFailed {
+    border: 2px solid red !important;
+}
+
+.detailedDescriptionInput {
+    height: 170px !important;
+}
