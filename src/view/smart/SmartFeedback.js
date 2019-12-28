@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
-import HomePage from "../dumb/Homepage";
 import userModel from "../../model/userModel";
 import MyNavbar from "../dumb/navbar/MyNavbar";
-
+import Feedback from '../dumb/Feedback';
 const mapModelStateToComponentState = (userModel) => ({
     userModelState: userModel.state
 });
 
-export default class SmartHomepage extends Component {
+export default class SmartFeedback extends Component {
     constructor(props) {
         super(props);
         this.state = mapModelStateToComponentState(userModel);
@@ -27,8 +26,7 @@ export default class SmartHomepage extends Component {
                     loginUser={userModel.loginUser}
                     loginAdmin={userModel.loginAdmin}
                     logout={userModel.logout} />
-
-                <HomePage userModelState={this.state.userModelState} />
+                <Feedback />
             </div>
         );
     }

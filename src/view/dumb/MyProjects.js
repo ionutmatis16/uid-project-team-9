@@ -1,21 +1,12 @@
 import React from 'react';
 import "../../style/projects.css";
-import ProjectThumbnail from "./ProjectThumbnail";
+import MyProjectThumbnail from "./MyProjectThumbnail";
 
-const ProjectList = ({
-                         userModelState, projects, categories, onProjectAddToFavorites,
-                         onProjectSearchChange, querySearch
-                     }) => (
-    <div className="projects-page-div">
-        {
-            userModelState.currentUser.role === "user" ?
-                <button onClick={() =>
-                    window.location.assign("#/projects/new")} className="propose-button green-button">Propose a project</button>
-                :
-                ""
-        }
+const MyProjects = ({userModelState, projects, categories, onProjectAddToFavorites,
+    onProjectSearchChange, querySearch}) => (
+    <div className="my-projects-page-div">
         <div>
-            <h1 className="projects-title">Projects</h1>
+            <h1 className="projects-title">My Projects</h1>
         </div>
         <div className="search-div">
             <p>Search a project</p>
@@ -39,7 +30,7 @@ const ProjectList = ({
                    value={querySearch.text}
                    onChange={event => onProjectSearchChange("text", event.target.value)}/>
             <button onClick={() =>
-                window.location.assign("#/projects?category=" + querySearch.category + "&text=" + querySearch.text)}>
+                window.location.assign("#/my-projects?category=" + querySearch.category + "&text=" + querySearch.text)}>
                 Search
             </button>
         </div>
@@ -47,9 +38,7 @@ const ProjectList = ({
             {
                 projects.map((project) => (
                     <div key={project.id}>
-                        <ProjectThumbnail project={project}
-                                          onProjectAddToFavorites={onProjectAddToFavorites}
-                                          userModelState={userModelState}/>
+                        <MyProjectThumbnail project={project}/>
                     </div>
                 ))
             }
@@ -57,4 +46,4 @@ const ProjectList = ({
     </div>
 );
 
-export default ProjectList;
+export default MyProjects;

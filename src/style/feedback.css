@@ -1,0 +1,41 @@
+.t10-title {
+    margin: 50px 0;
+}
+
+.t10-content {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+.t10-content img {
+    border-radius: 20px;
+    width: 45%;
+    height: 45%;
+    margin: auto;
+    border: 1px solid lightgrey;
+}
+
+.t10-forms-container {
+    width: 45%;
+}
+
+.t10-form {
+    margin-top: 10px;
+    margin-bottom: 40px;
+}
+
+.t10-form textarea {
+    resize: none;
+    height: 12em !important;
+}
+
+.t10-button {
+    margin-top: 5px;
+    width: 10em;
+}
+
+.t10-error-field {
+    border: 2px solid red !important;
+}

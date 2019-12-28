@@ -1,0 +1,57 @@
+.t11-main-title {
+    margin: 50px 0;
+}
+
+.t11-container {
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+.t11-project-approval-item {
+    background-color: #E7E9EB;
+    border-radius: 5px;
+    margin: 20px;
+    padding: 15px;
+    display: flex;
+    width: 100%;
+}
+
+.t11-project-approval-item img {
+    width: 15em;
+    border-radius: 10px;
+}
+
+.t11-project-approval-details {
+    margin-left: 20px;
+    width: 100%;
+}
+
+.t11-project-approval-header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.t11-project-approval-buttons {
+    display: flex;
+    justify-content: space-around;
+}
+
+.t11-project-approval-buttons Button {
+    font-weight: bold;
+    width: 15em;
+}
+
+.t11-search-bar {
+    padding: 5px;
+}
+
+.t11-approval-completed {
+    opacity: 0;
+    height: 0;
+    width: 0;
+    margin: 0;
+    padding: 0;
+    color: rgba(0, 0, 0, 0);
+    transition: height 0.1s 1s, width 0.1s 1s, margin 0.5s 1s, padding 0.5s 1s, opacity 0.5s;
+}
