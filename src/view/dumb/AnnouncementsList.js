@@ -8,7 +8,10 @@ const AnnouncementList=({
     <div className="announcements-page-div">
         {
             userModelState.currentUser.role === "admin" ?
-                <button className="add-button green-button">Add an announcement</button>
+                <button
+                    onClick={() =>
+                        window.location.assign("#/announcements/new")}
+                    className="add-button green-button">Add an announcement</button>
                 : ""
         }
         <div>

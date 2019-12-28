@@ -17,6 +17,12 @@
     font-weight: 600;
 }
 
+.add-button {
+    position: absolute;
+    left: 10%;
+    top: 110px;
+}
+
 .announcements-list-div {
     display: flex;
     justify-content: space-between;
