@@ -1,0 +1,13 @@
+#accessibility {
+    position: fixed;
+    left: 20px;
+    top: 45%;
+    opacity: 60%;
+}
+
+#accessibility:hover {
+    position: fixed;
+    left: 20px;
+    top: 45%;
+    opacity: 100%;
+}

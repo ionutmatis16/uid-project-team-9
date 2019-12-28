@@ -27,7 +27,7 @@ const UserNavbar = ({logout}) => (
                         FAQ
                     </span>
                 </li>
-                <li className={"nav-item " + (window.location.hash.includes("projects") ? "active" : "")}>
+                <li className={"nav-item " + (window.location.hash === "#/projects" ? "active" : "")}>
                     <span className="nav-link"
                           onClick={() => window.location.assign("#/projects")}>
                         Projects
@@ -53,10 +53,10 @@ const UserNavbar = ({logout}) => (
                             My account
                         </DropdownToggle>
                         <DropdownMenu className="my-dropdown-menu">
-                            <DropdownItem>My projects</DropdownItem>
-                            <DropdownItem onClick={() => window.location.assign("#/voted")}>Voted projects</DropdownItem>
+                            <DropdownItem onClick={() => window.location.assign("#/my-projects")}>My projects</DropdownItem>
+                            <DropdownItem onClick={() => window.location.assign("#/voted-projects")}>Voted projects</DropdownItem>
                             <DropdownItem>Favorite projects</DropdownItem>
-                            <DropdownItem>Settings</DropdownItem>
+                            <DropdownItem onClick={() => window.location.assign("#/settings")}>Settings</DropdownItem>
                         </DropdownMenu>
                     </UncontrolledButtonDropdown>
                 </div>
