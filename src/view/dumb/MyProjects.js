@@ -30,7 +30,7 @@ const MyProjects = ({userModelState, projects, categories, onProjectAddToFavorit
                    value={querySearch.text}
                    onChange={event => onProjectSearchChange("text", event.target.value)}/>
             <button onClick={() =>
-                window.location.assign("#/myproj?category=" + querySearch.category + "&text=" + querySearch.text)}>
+                window.location.assign("#/my-projects?category=" + querySearch.category + "&text=" + querySearch.text)}>
                 Search
             </button>
         </div>

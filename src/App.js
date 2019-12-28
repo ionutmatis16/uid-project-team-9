@@ -18,7 +18,7 @@ function App() {
                     <Route exact component={SmartFAQAdd} path="/faq/add"/>
                     <Route exact component={SmartProjectList} path="/projects"/>
                     <Route exact component={SmartProjectDetails} path="/projects/:id"/>
-                    <Route exact component={SmartMyProjects} path="/myproj"/>
+                    <Route exact component={SmartMyProjects} path="/my-projects"/>
 
                 </Switch>
             </HashRouter>
