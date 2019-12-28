@@ -17,7 +17,7 @@ const HomePage = ({userModelState, loginUser, loginAdmin, logout}) => (
                 </span>
             </div>
             <div>
-                <img src={"/images/homepage.png"} alt="Homepage"/>
+                <img className="homepage-image" src={"/images/homepage.png"} alt="Homepage"/>
             </div>
         </div>
     </div>

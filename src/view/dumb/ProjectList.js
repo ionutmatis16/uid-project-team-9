@@ -9,7 +9,8 @@ const ProjectList = ({
     <div className="projects-page-div">
         {
             userModelState.currentUser.role === "user" ?
-                <button className="propose-button green-button">Propose a project</button>
+                <button onClick={() =>
+                    window.location.assign("#/projects/new")} className="propose-button green-button">Propose a project</button>
                 :
                 ""
         }

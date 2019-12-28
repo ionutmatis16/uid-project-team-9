@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import HomePage from "../dumb/Homepage";
 import userModel from "../../model/userModel";
 import MyNavbar from "../dumb/navbar/MyNavbar";
@@ -24,11 +24,11 @@ export default class SmartHomepage extends Component {
         return (
             <div>
                 <MyNavbar userModelState={this.state.userModelState}
-                          loginUser={userModel.loginUser}
-                          loginAdmin={userModel.loginAdmin}
-                          logout={userModel.logout}/>
+                    loginUser={userModel.loginUser}
+                    loginAdmin={userModel.loginAdmin}
+                    logout={userModel.logout} />
 
-                <HomePage userModelState={this.state.userModelState}/>
+                <HomePage userModelState={this.state.userModelState} />
             </div>
         );
     }

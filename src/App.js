@@ -7,6 +7,10 @@ import SmartProjectDetails from "./view/smart/SmartProjectDetails";
 import SmartFAQList from "./view/smart/SmartFAQList";
 import SmartFAQAdd from "./view/smart/SmartFAQAdd";
 import SmartAboutpage from "./view/smart/SmartAboutpage";
+import SmartProjectProposal from "./view/smart/SmartProjectProposal";
+import SmartFeedback from './view/smart/SmartFeedback';
+import AccessibilityButton from "./view/dumb/AccessibilityButton";
+import SmartProjectApproval from "./view/smart/SmartProjectApproval";
 
 function App() {
     return (
@@ -17,11 +21,15 @@ function App() {
                     <Route exact component={SmartFAQList} path="/faq"/>
                     <Route exact component={SmartFAQAdd} path="/faq/add"/>
                     <Route exact component={SmartProjectList} path="/projects"/>
+                    <Route exact component={SmartProjectProposal} path="/projects/new"/>
                     <Route exact component={SmartProjectDetails} path="/projects/:id"/>
                     <Route exact component={SmartAboutpage} path="/about"/>
+                    <Route exact component={SmartFeedback} path="/feedback"/>
+                    <Route exact component={SmartProjectApproval} path="/project-approval"/>
 
                 </Switch>
             </HashRouter>
+            <AccessibilityButton />
         </div>
     );
 }

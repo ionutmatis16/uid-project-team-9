@@ -1,8 +1,13 @@
+.page-title {
+    padding: 40px 0;
+}
 .tabContent {
     width:95%;
     margin-top: 10px;
     margin-left: 20px;
+    margin-bottom: 50px;
     padding-top: 15px;
+
 }
 .aboutCard{
     height: 100%;
@@ -14,4 +19,8 @@
     height: 300px;
     width: 450px ;
 
+}
+
+.listGroupItem:hover{
+    background-color: #CBDCE6;
 }

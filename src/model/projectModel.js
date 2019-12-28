@@ -12,11 +12,12 @@ class ProjectModel extends EventEmitter {
                     category: "Smart community",
                     image: "event_tracker.jpg",
                     smallDescription: "Application that notifies the users of their city when events are taking place.",
-                    extendedDescription: "extend the descr",
+                    extendedDescription: "A mobile application that notifies the users of their city when events are taking place. The application allows the users to choose the types of events they are enjoying the most, so that the application will send them personalized notifications about the most relevant events for them.",
                     nrOfVotes: 201,
                     favorite: false,
                     voted: true,
-                    status: "Design phase"
+                    status: "Design phase",
+                    approved: undefined,
                 },
                 {
                     id: 1,
@@ -24,11 +25,12 @@ class ProjectModel extends EventEmitter {
                     category: "Smart street",
                     image: "smart_pedestrian_crossing.jpg",
                     smallDescription: "Pedestrian crossing that changes the colors depending on the traffic lights.",
-                    extendedDescription: "extend the descr",
+                    extendedDescription: "Smart pedestrian crossings have been designed to reduce the number of traffic accidents that occur in many busy areas and increase in this way safety for pedestrians. This technical solution functions with a series of sensors which detect  movement every time someone is crossing or about to cross.",
                     nrOfVotes: 76,
                     favorite: true,
                     voted: false,
-                    status: "Make a selection"
+                    status: "Make a selection",
+                    approved: undefined,
                 },
                 {
                     id: 2,
@@ -36,11 +38,12 @@ class ProjectModel extends EventEmitter {
                     category: "Smart street",
                     image: "smart_traffic_lights.jpg",
                     smallDescription: "Artificial intelligence and traffic sensors to allow much shorter traffic periods.",
-                    extendedDescription: "extend the descr",
+                    extendedDescription: "Smart Traffic Lights that use artificial intelligence and traffic sensors to allow much shorter traffic periods. They reduce everyday congestion by smoothing traffic flows and prioritising traffic in response to demand in real time.",
                     nrOfVotes: 401,
                     favorite: false,
                     voted: false,
-                    status: "Make a selection"
+                    status: "Make a selection",
+                    approved: undefined,
                 },
                 {
                     id: 3,
@@ -48,23 +51,25 @@ class ProjectModel extends EventEmitter {
                     category: "Eco city",
                     image: "smart_garbage_bin.jpg",
                     smallDescription: "Garbage bins that automatically sort the contents.",
-                    extendedDescription: "extend the descr",
+                    extendedDescription: "Smart trash bins or receptacles equipped with sensors under the lid that monitor when the bins are filling up and alert the sanitation department to empty them before they are full and automatically sort the contents into categories.",
                     nrOfVotes: 97,
                     favorite: false,
                     voted: false,
-                    status: "Finished"
+                    status: "Finished",
+                    approved: undefined,
                 },
                 {
                     id: 4,
                     name: "Smart Public Transport Machines",
                     category: "Smart transport",
                     image: "smart_public_transport_machines.jpg",
-                    smallDescription: " Smart Machines that offer aid in choosing what type of public transport or what line to take.",
-                    extendedDescription: "extend the descr",
+                    smallDescription: "Smart Machines that offer aid in choosing what type of public transport or what line to take.",
+                    extendedDescription: "Replace the current ticket machines for public transport with Smart Machines that can also offer aid in choosing what type of public trasnport or what line to take. They use GPS systems to notify the position of vehicles in real time and can suggest the optimal route to a chosen destination.",
                     nrOfVotes: 639,
                     favorite: false,
                     voted: false,
-                    status: "Make a selection"
+                    status: "Make a selection",
+                    approved: undefined,
                 },
                 {
                     id: 5,
@@ -72,11 +77,12 @@ class ProjectModel extends EventEmitter {
                     category: "Smart city",
                     image: "city_wifi.jpg",
                     smallDescription: "Wifi Internet connection everywhere in the city.",
-                    extendedDescription: "extend the descr",
+                    extendedDescription: "A municipal wireless network is a citywide wireless network. This usually works by providing municipal broadband via Wi-Fi to large parts or all of a municipal area by deploying a wireless mesh network. The typical deployment design uses hundreds of wireless access points deployed outdoors, often on poles.",
                     nrOfVotes: 21,
                     favorite: false,
                     voted: false,
-                    status: "Make a selection"
+                    status: "Make a selection",
+                    approved: undefined,
                 },
                 /*{
                     id: 6,
@@ -88,7 +94,8 @@ class ProjectModel extends EventEmitter {
                     nrOfVotes: 140,
                     favorite: false,
                     voted: false,
-                    status: "Make a selection"
+                    status: "Make a selection",
+                    approved: undefined,
                 },
                 {
                     id: 7,
@@ -100,7 +107,8 @@ class ProjectModel extends EventEmitter {
                     nrOfVotes: 21,
                     favorite: false,
                     voted: false,
-                    status: "Make a selection"
+                    status: "Make a selection",
+                    approved: undefined,
                 }*/
             ],
             projectIndex: 6,
@@ -244,6 +252,38 @@ class ProjectModel extends EventEmitter {
 
         this.emit("changedUpdatedProject", this.state);
         window.location.assign("#/projects");
+    };
+
+    onProjectApproval = (projectId, approval) => {
+        let project = this.state.projects[projectId];
+
+        project.approved = approval;
+
+        this.emit("changedProjectDetails", this.state);
+    }
+
+    addProject(project) {
+        project.id = this.state.projectIndex;
+        project.nrOfVotes = 0;
+        project.voted = false;
+        project.favorite = false;
+        project.status = "";
+        this.state.projectIndex = this.state.projectIndex + 1;
+        this.state.projects.push(project);
+        console.log(this.state.projects);
+    }
+
+    extractFilename(path) {
+        if (path.substr(0, 12) === "C:\\fakepath\\")
+            return path.substr(12); // modern browser
+        let x;
+        x = path.lastIndexOf('/');
+        if (x >= 0) // Unix-based path
+            return path.substr(x + 1);
+        x = path.lastIndexOf('\\');
+        if (x >= 0) // Windows-based path
+            return path.substr(x + 1);
+        return path; // just the file name
     }
 }
 
