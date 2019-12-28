@@ -276,6 +276,11 @@
     border: 2px solid red;
 }
 
+.proposeFormDiv {
+    width: 70%;
+    margin-left: 170px;
+    margin-top: 25px;
+}
 .my-visual-info {
     margin-bottom: 10px;
 }
