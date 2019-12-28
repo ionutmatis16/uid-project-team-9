@@ -29,7 +29,7 @@ function App() {
                     <Route exact component={SmartProjectApproval} path="/project-approval"/>
                     <Route exact component={SmartMyProjects} path="/my-projects"/>
                     <Route exact component={SmartSettings} path="/settings"/>
-                    <Route exact component={SmartVotedProjects} path="/voted"/>
+                    <Route exact component={SmartVotedProjects} path="/voted-projects"/>
 
                 </Switch>
             </HashRouter>
