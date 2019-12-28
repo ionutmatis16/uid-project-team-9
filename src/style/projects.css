@@ -27,14 +27,36 @@
     top: 110px;
 }
 
-.voted-search-div {
-    text-align: center;
+.search-div {
+    display: flex;
+    justify-content: space-between;
 }
 
-.voted-search-div > input {
+.search-div > p {
+    font-size: 20px;
+    font-weight: bold;
+    width: 15%;
+    margin-top: 0.3rem;
+    margin-bottom: 0.3rem;
+}
+
+.search-div > select {
+    width: 25%;
+    border-radius: 6px;
+}
+
+.search-div > input {
     width: 25%;
     border-radius: 6px;
     border: 1px solid gray;
+}
+
+.search-div > button {
+    width: 15%;
+    color: white;
+    border-radius: 6px;
+    background-color: #59626a;
+    border: none;
 }
 
 .projects-list-div {
@@ -252,6 +274,16 @@
 
 .invalid-admin-update {
     border: 2px solid red;
+}
+
+.voted-search-div {
+    text-align: center;
+}
+
+.voted-search-div > input {
+    width: 25%;
+    border-radius: 6px;
+    border: 1px solid gray;
 }
 
 .my-visual-info {
