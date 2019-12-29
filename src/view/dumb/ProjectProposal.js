@@ -13,6 +13,9 @@ const ProjectProposal = ({userModelState, categories, projectModel}) => {
     const [isDetailedDescriptionError, setDetailedDescriptionError] = useState(false);
     return (
         <div>
+            <div>
+                <h1 className="projects-title">Propose a Project</h1>
+            </div>
             {
                 userModelState.currentUser.role === "user" ?
                     <div className={"proposeFormDiv"}>

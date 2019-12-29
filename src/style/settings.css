@@ -1,0 +1,50 @@
+.settings-div {
+    width: 100%;
+    padding: 0 10%;
+    margin-bottom: 100px;
+}
+
+.page-title {
+    padding: 50px 0;
+}
+
+.settings-val {
+    margin-left: -100px;
+}
+
+.new-val {
+    position: absolute;
+    margin-left: 350px;
+}
+
+.new-val-pass {
+    position: absolute;
+    margin-left: 350px;
+    margin-top: 45px;
+}
+
+.save {
+    margin-left: 900px;
+    width: 100px;
+}
+
+.cancel {
+    margin-left: 900px;
+    width: 100px;
+    margin-top: 5px;
+}
+
+.errorMsg {
+    position: absolute;
+    margin-left: 670px;
+    font-size: 15px;
+    width: 150px;
+}
+
+.preview {
+    width: 150px;
+    height: 150px;
+    margin-left: -50px;
+    margin-right: -5px;
+    margin-top: 25px;
+}

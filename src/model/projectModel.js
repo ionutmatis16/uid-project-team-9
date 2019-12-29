@@ -18,6 +18,8 @@ class ProjectModel extends EventEmitter {
                     voted: true,
                     status: "Design phase",
                     approved: undefined,
+                    viewed: 301,
+                    rating: 4
                 },
                 {
                     id: 1,
@@ -31,6 +33,8 @@ class ProjectModel extends EventEmitter {
                     voted: false,
                     status: "Make a selection",
                     approved: undefined,
+                    viewed: 501,
+                    rating: 5
                 },
                 {
                     id: 2,
@@ -44,6 +48,8 @@ class ProjectModel extends EventEmitter {
                     voted: false,
                     status: "Make a selection",
                     approved: undefined,
+                    viewed: 1,
+                    rating: 4
                 },
                 {
                     id: 3,
@@ -57,6 +63,8 @@ class ProjectModel extends EventEmitter {
                     voted: false,
                     status: "Finished",
                     approved: undefined,
+                    viewed: 0,
+                    rating: 2
                 },
                 {
                     id: 4,
@@ -70,6 +78,8 @@ class ProjectModel extends EventEmitter {
                     voted: false,
                     status: "Make a selection",
                     approved: undefined,
+                    viewed: 37,
+                    rating: 4
                 },
                 {
                     id: 5,
@@ -83,6 +93,8 @@ class ProjectModel extends EventEmitter {
                     voted: false,
                     status: "Make a selection",
                     approved: undefined,
+                    viewed: 55,
+                    rating: 1
                 },
                 /*{
                     id: 6,
@@ -96,6 +108,8 @@ class ProjectModel extends EventEmitter {
                     voted: false,
                     status: "Make a selection",
                     approved: undefined,
+                    viewed: 301,
+                    rating: 4
                 },
                 {
                     id: 7,
@@ -109,6 +123,8 @@ class ProjectModel extends EventEmitter {
                     voted: false,
                     status: "Make a selection",
                     approved: undefined,
+                    viewed: 301,
+                    rating: 3
                 }*/
             ],
             projectIndex: 6,
@@ -129,10 +145,26 @@ class ProjectModel extends EventEmitter {
                 validName: true,
                 validSmallDescription: true,
                 validExtendedDescription: true,
-                validStatus: true
+                validStatus: true,
+                viewed: -1,
+                rating: -1
             }
         }
     }
+
+    getRating = (id) => {
+        let i;
+        let ratingResult='';
+        let project;
+        for (i=0; i<this.state.projects.length; i++){
+            if (id === this.state.projects[i].id)
+                project = this.state.projects[i];
+        }
+        for (i=0; i<project.rating; i++){
+            ratingResult += '★';
+        }
+        return ratingResult + ' ' + project.rating + '/5';
+    };
 
     getAllCategories = () => {
         let categoriesSet = new Set();
@@ -246,7 +278,9 @@ class ProjectModel extends EventEmitter {
                 validName: true,
                 validSmallDescription: true,
                 validExtendedDescription: true,
-                validStatus: true
+                validStatus: true,
+                viewed: -1,
+                rating: -1
             }
         };
 
@@ -270,6 +304,7 @@ class ProjectModel extends EventEmitter {
         project.status = "";
         this.state.projectIndex = this.state.projectIndex + 1;
         this.state.projects.push(project);
+        userModel.state.myProjects.push(project.id);
         console.log(this.state.projects);
     }
 
