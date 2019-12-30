@@ -14,6 +14,9 @@ const AddAnnouncement =
         const [isDetailedDescriptionError, setDetailedDescriptionError] = useState(false)
         return (
             <div>
+                <div>
+                    <h1 className="announcements-title">Add an Announcement</h1>
+                </div>
                 {
                     userModelState.currentUser.role !== "user" ?
                         <div className={"proposeFormDiv"}>
