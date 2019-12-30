@@ -6,12 +6,13 @@ import AnnouncementDetails from "../dumb/AnnouncementDetails";
 import projectModel from "../../model/projectModel";
 
 
-const mapModelStateToComponentState = (userModel, announcementModel, props) => ({
+const mapModelStateToComponentState = (userModel, announcement) => ({
     userModelState: userModel.state,
-    announcement: getAnnouncementById(announcementModel.state.announcements, props.match.params.id)
+    announcement: announcement
 });
 
 function getAnnouncementById(announcements, id) {
+    console.log(announcements.length);
     id = parseInt(id);
     for (let i = 0; i < announcements.length; i++) {
         if (announcements[i].id === id)
@@ -22,8 +23,8 @@ function getAnnouncementById(announcements, id) {
 export default class SmartAnnouncementDetails extends Component{
     constructor(props){
         super(props);
-
-        this.state = mapModelStateToComponentState(userModel, announcementModel, props);
+        let announcement = getAnnouncementById(announcementModel.state.announcements, props.match.params.id);
+        this.state = mapModelStateToComponentState(userModel, announcement);
         this.listener = () => this.setState(mapModelStateToComponentState(userModel, projectModel, props));
         userModel.addListener("changeUser", this.listener);
 

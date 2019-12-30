@@ -5,16 +5,16 @@ import announcementModel from "../../model/announcementModel";
 import AddAnnouncement from "../dumb/AddAnnouncement";
 
 
-const mapModelStateToComponentState = (userModel, announcementModel) => ({
+const mapModelStateToComponentState = (userModel, announcements) => ({
     userModelState: userModel.state,
-    announcements: announcementModel.state.announcements
+    announcements: announcements
 });
 
 export default class SmartAddAnnouncement extends Component {
     constructor(props){
         super(props);
-
-        this.state = mapModelStateToComponentState(userModel, announcementModel);
+        let announcements = announcementModel.state.announcements;
+        this.state = mapModelStateToComponentState(userModel, announcements);
         this.listener = () => this.setState(mapModelStateToComponentState(userModel));
         userModel.addListener("changeUser", this.listener);
 

@@ -31,8 +31,8 @@ class AnnouncementModel {
         announcement.id = this.state.projectIndex;
         this.state.projectIndex = this.state.projectIndex + 1;
         this.state.announcements.push(announcement);
-        console.log(this.state.announcements);
     }
 }
 const announcementModel = new AnnouncementModel();
+
 export default announcementModel;
