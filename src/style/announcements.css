@@ -7,16 +7,6 @@
     margin: 50px 0 100px;
 }
 
-.green-button {
-    background-color: #77D353;
-    border-radius: 5px;
-    width: 192px;
-    height: 40px;
-    border: none;
-    color: white;
-    font-weight: 600;
-}
-
 .add-button {
     position: absolute;
     left: 10%;
@@ -41,6 +31,18 @@
     padding-right: 30px;
     border-radius: 10px;
     cursor: pointer;
+}
+
+.announcement-image {
+    width: 33%;
+}
+
+.announcement-image > img  {
+    background-size: 100%;
+    border-radius: 100%;
+    height: 130px;
+    width: 130px;
+    margin-bottom: 10px;
 }
 
 .announcement-thumbnail-div:hover {
@@ -112,6 +114,7 @@
 }
 
 .announcement-details-div {
+    margin-top: 50px;
     padding: 0 10%;
 }
 

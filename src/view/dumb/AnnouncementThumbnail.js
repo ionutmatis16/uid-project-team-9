@@ -4,7 +4,7 @@ import "../../style/announcements.css";
 const AnnouncementThumbnail = ({userModelState, announcement})=>(
     <div className="announcement-thumbnail-div"
          onClick={() => window.location.assign("#/announcements/" + announcement.id)}>
-        <div className="visual-info">
+        <div className="announcement-image">
             <img src={"/images/" + announcement.image} alt={"/src/images/" + announcement.image}/>
         </div>
         <div className="thumbnail-text-info">

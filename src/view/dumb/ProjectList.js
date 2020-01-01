@@ -21,15 +21,13 @@ const ProjectList = ({
             <p>Search a project</p>
             <select onChange={event =>
                 onProjectSearchChange("category", event.target.value.toLowerCase().split(" ").join("_"))}>
-                <option value=""
-                        selected={querySearch.category === ""}>
+                <option value="">
                     Make a selection
                 </option>
                 {
                     categories.map((category, index) => (
                         <option key={index}
-                                value={category}
-                                selected={category.toLowerCase().split(" ").join("_") === querySearch.category}>
+                                value={category}>
                             {category}
                         </option>
                     ))

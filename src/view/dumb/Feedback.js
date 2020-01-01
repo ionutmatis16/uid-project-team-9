@@ -21,7 +21,9 @@ const Feedback = () => {
                                }}
                                className={isFeedbackError ? "t10-error-field" : ""}
                                name="feedback"/>
-                        <Button className="t10-button">Send</Button>
+                        <Button className="t10-button">
+                            Send
+                        </Button>
                     </Form>
                     <h3>Report a bug</h3>
                     <Form className="t10-form">

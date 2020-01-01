@@ -40,11 +40,13 @@ const ProjectApprovalList = ({
         </div>
 
         {
-            projects.map(project =>
-                <ProjectApprovalItem project={project}
-                                     onProjectApproved={onProjectApproval}
-                                     onProjectDenied={onProjectApproval}
-                />)
+            projects.map((project, index) =>
+                <div key={index}>
+                    <ProjectApprovalItem project={project}
+                                         onProjectApproved={onProjectApproval}
+                                         onProjectDenied={onProjectApproval}
+                    />
+                </div>)
         }
     </div>
 );

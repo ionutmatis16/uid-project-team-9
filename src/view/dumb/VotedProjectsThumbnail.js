@@ -10,7 +10,7 @@ const VotedProjectThumbnail = ({project}) => (
         </div>
         <div className="my-thumbnail-text-info">
             <div className="my-background">
-                <img src={"/images/blackboard.png"}/>
+                <img src={"/images/blackboard.png"} alt="blackboard"/>
             </div>
             <div className="voted-text">
                 <div>{project.name}</div>
