@@ -22,7 +22,10 @@ const Feedback = () => {
                                className={isFeedbackError ? "t10-error-field" : ""}
                                name="feedback"/>
                         <Button onClick={() => {
-                            document.getElementById("t10-feedback-form").value = "";
+                            if (document.getElementById("t10-feedback-form").value.length >= 5) {
+                                alert("Feedback has been reported!");
+                                document.getElementById("t10-feedback-form").value = "";
+                            }
                             return false;
                         }} className="t10-button">Send</Button>
                     </Form>
@@ -34,9 +37,13 @@ const Feedback = () => {
                                    setBugError(document.getElementById("t10-bug-form").value.length < 5)
                                }}
                                className={isBugError ? "t10-error-field" : ""} name="report-a-bug"/>
-                        <Input className="t10-button" type="file" name="screenshot"/>
+                        <Input id="t10-input-value" className="t10-button" type="file" name="screenshot"/>
                         <Button onClick={() => {
-                            document.getElementById("t10-bug-form").value = "";
+                            if (document.getElementById("t10-bug-form").value.length >= 5) {
+                                alert("Bug has been reported!");
+                                document.getElementById("t10-bug-form").value = "";
+                                document.getElementById("t10-input-value").value = "";
+                            }
                             return false;
                         }} className="t10-button">Submit</Button>
                     </Form>

@@ -17,7 +17,7 @@ const AnnouncementList=({
         <div>
             <h1 className="announcements-title">Announcements</h1>
         </div>
-        <div className="announcements-list-div">
+        <div>
             {
                 announcements.map((announcement) => (
                     <div key={announcement.id}>

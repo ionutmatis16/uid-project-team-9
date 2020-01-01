@@ -1,7 +1,8 @@
+import {EventEmitter} from "events";
 
-class AnnouncementModel {
-
+class AnnouncementModel extends EventEmitter {
     constructor(){
+        super();
         this.state = {
             announcements:[
             {
@@ -24,13 +25,22 @@ class AnnouncementModel {
                     ", plastic bags, scrap metals, etc. Should these rules not be followed, the batch of recycled items could be considered contaminated, and thus all items will not be accepted for recycling."
             }
             ],
-            projectIndex:2
+            announcementIndex:2
         }
     }
+
     addAnnouncement(announcement) {
-        announcement.id = this.state.projectIndex;
-        this.state.projectIndex = this.state.projectIndex + 1;
+        announcement.id = this.state.announcementIndex;
+        this.state.announcementIndex = this.state.announcementIndex + 1;
         this.state.announcements.push(announcement);
+    }
+
+    deleteAnnouncement(announcementId) {
+        let announcements = this.state.announcements;
+        announcements = announcements.filter(announcement => announcement.id !== announcementId);
+        this.state.announcements = announcements;
+
+        this.emit("changedAnnouncements", this.state);
     }
 }
 const announcementModel = new AnnouncementModel();
