@@ -21,9 +21,10 @@ const Feedback = () => {
                                }}
                                className={isFeedbackError ? "t10-error-field" : ""}
                                name="feedback"/>
-                        <Button className="t10-button">
-                            Send
-                        </Button>
+                        <Button onClick={() => {
+                            document.getElementById("t10-feedback-form").value = "";
+                            return false;
+                        }} className="t10-button">Send</Button>
                     </Form>
                     <h3>Report a bug</h3>
                     <Form className="t10-form">
@@ -34,7 +35,10 @@ const Feedback = () => {
                                }}
                                className={isBugError ? "t10-error-field" : ""} name="report-a-bug"/>
                         <Input className="t10-button" type="file" name="screenshot"/>
-                        <Button onClick={() => false} className="t10-button">Submit</Button>
+                        <Button onClick={() => {
+                            document.getElementById("t10-bug-form").value = "";
+                            return false;
+                        }} className="t10-button">Submit</Button>
                     </Form>
                 </div>
 
