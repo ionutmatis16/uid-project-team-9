@@ -1,0 +1,189 @@
+.announcements-page-div {
+    margin: 0 10%;
+}
+
+.announcements-title {
+    text-align: center;
+    margin: 50px 0 100px;
+}
+
+.green-button {
+    background-color: #77D353;
+    border-radius: 5px;
+    width: 192px;
+    height: 40px;
+    border: none;
+    color: white;
+    font-weight: 600;
+}
+
+.add-button {
+    position: absolute;
+    left: 10%;
+    top: 110px;
+}
+
+.announcements-list-div {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 100px;
+}
+
+
+.announcement-thumbnail-div {
+    display: flex;
+    justify-content: space-between;
+    width: 500px;
+    margin-bottom: 30px;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 30px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.announcement-thumbnail-div:hover {
+    background-color: #cbdce6;
+}
+
+.visual-info {
+    width: 33%
+}
+
+.visual-info > img {
+    background-size: 100%;
+    border-radius: 100%;
+    height: 130px;
+    width: 130px;
+    float: left;
+    margin-left: -35px;
+}
+
+
+.visual-info > span:first-of-type {
+    float: left;
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 50%;
+    padding: 5px;
+    z-index: 1;
+    position: sticky;
+    width: 37px;
+    height: 37px;
+    text-align: center;
+    line-height: 26px;
+    font-weight: bold;
+    cursor: inherit;
+}
+
+
+.visual-info > span:last-of-type {
+    float: right;
+    margin-left: -50px;
+    margin-top: 80px;
+    color: red;
+    font-size: 40px;
+    background-color: white;
+    border-radius: 100%;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    line-height: 60px;
+}
+
+
+.thumbnail-text-info {
+    width: 75%;
+}
+
+.thumbnail-text-info > div:first-of-type {
+    font-weight: bold;
+    font-size: 20px;
+    height: 35px;
+}
+
+.thumbnail-text-info > div:last-of-type {
+    font-style: italic;
+    font-size: 18px;
+    height: 35px;
+}
+.thumbnail-text-info-name{
+    height: 50px !important;
+}
+
+.announcement-details-div {
+    padding: 0 10%;
+}
+
+.announcement-details-title {
+    text-align: left;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+
+.announcement-details-basic-info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.announcement-details-basic-info > img {
+    width: 30%;
+    border-radius: 10px;
+}
+
+.announcement-details-basic-info > div {
+    width: 68%;
+}
+
+.short-description {
+    margin-top: 50px;
+    text-align: left;
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 0;
+}
+
+.extended-description {
+    margin-top: 20px;
+}
+
+.extended-description > p {
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 0;
+}
+
+.extended-description > textarea {
+    width: 100%;
+    border-radius: 5px;
+    height: 150px;
+}
+
+.gray-button {
+    height: 35px;
+    width: 130px;
+    color: white;
+    border-radius: 6px;
+    background-color: #59626a;
+    border: none;
+}
+
+
+.invalid-admin-update {
+    border: 2px solid red;
+}
+
+.proposeFormDiv {
+    width: 70%;
+    margin-left: 170px;
+    margin-top: 25px;
+}
+
+.validationFailed {
+    border: 2px solid red !important;
+}
+
+.detailedDescriptionInput {
+    height: 170px !important;
+}
