@@ -16,6 +16,7 @@ function getProjectsBasedOnSearch(projects, props) {
 
     projects = projects
         .filter(project => project.approved === undefined)
+
         .filter(project => project.category.toLocaleLowerCase().split(" ").join("_").includes(category))
         .filter(project => project.name.toLocaleLowerCase().includes(text.toLocaleLowerCase()));
 

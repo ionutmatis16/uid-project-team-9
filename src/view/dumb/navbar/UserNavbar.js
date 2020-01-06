@@ -27,7 +27,7 @@ const UserNavbar = ({logout}) => (
                         FAQ
                     </span>
                 </li>
-                <li className={"nav-item " + (window.location.hash === "#/projects" ? "active" : "")}>
+                <li className={"nav-item " + (window.location.hash.includes("#/projects") ? "active" : "")}>
                     <span className="nav-link"
                           onClick={() => window.location.assign("#/projects")}>
                         Projects

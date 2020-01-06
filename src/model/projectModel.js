@@ -17,7 +17,7 @@ class ProjectModel extends EventEmitter {
                     favorite: false,
                     voted: true,
                     status: "Design phase",
-                    approved: undefined,
+                    approved: true,
                     viewed: 301,
                     rating: 4
                 },
@@ -31,8 +31,8 @@ class ProjectModel extends EventEmitter {
                     nrOfVotes: 76,
                     favorite: true,
                     voted: false,
-                    status: "Make a selection",
-                    approved: undefined,
+                    status: "Design phase",
+                    approved: true,
                     viewed: 501,
                     rating: 5
                 },
@@ -46,8 +46,8 @@ class ProjectModel extends EventEmitter {
                     nrOfVotes: 401,
                     favorite: false,
                     voted: false,
-                    status: "Make a selection",
-                    approved: undefined,
+                    status: "Design phase",
+                    approved: true,
                     viewed: 1,
                     rating: 4
                 },
@@ -62,7 +62,7 @@ class ProjectModel extends EventEmitter {
                     favorite: false,
                     voted: false,
                     status: "Finished",
-                    approved: undefined,
+                    approved: true,
                     viewed: 0,
                     rating: 2
                 },
@@ -76,8 +76,8 @@ class ProjectModel extends EventEmitter {
                     nrOfVotes: 639,
                     favorite: false,
                     voted: false,
-                    status: "Make a selection",
-                    approved: undefined,
+                    status: "Design phase",
+                    approved: true,
                     viewed: 37,
                     rating: 4
                 },
@@ -91,23 +91,23 @@ class ProjectModel extends EventEmitter {
                     nrOfVotes: 21,
                     favorite: false,
                     voted: false,
-                    status: "Make a selection",
-                    approved: undefined,
+                    status: "Implementation phase",
+                    approved: true,
                     viewed: 55,
                     rating: 1
                 },
-                /*{
+                {
                     id: 6,
                     name: "Parking Lot Tracker",
                     category: "Smart transport",
                     image: "parking_lot_tracker.jpg",
                     smallDescription: "Tracking application that helps you find a parking lot.",
-                    extendedDescription: "extend the descr",
+                    extendedDescription: "The application will connect all smart parking slots throughout the city and will offer an overview of them. From this application, the user will be able to reserve a spot and then park in it.",
                     nrOfVotes: 140,
                     favorite: false,
                     voted: false,
                     status: "Make a selection",
-                    approved: undefined,
+                    approved: false,
                     viewed: 301,
                     rating: 4
                 },
@@ -117,17 +117,17 @@ class ProjectModel extends EventEmitter {
                     category: "Smart politics",
                     image: "voting_application.jpg",
                     smallDescription: "Web application that allows citizens to vote more easily.",
-                    extendedDescription: "extend the descr",
+                    extendedDescription: "This application will allow citizens to vote different projects from the comfort of their house. By doing this, the process will be faster, more precise and less wasteful.",
                     nrOfVotes: 21,
                     favorite: false,
                     voted: false,
                     status: "Make a selection",
-                    approved: undefined,
+                    approved: false,
                     viewed: 301,
                     rating: 3
-                }*/
+                }
             ],
-            projectIndex: 6,
+            projectIndex: 8,
             search: {
                 category: "",
                 text: ""
@@ -142,6 +142,7 @@ class ProjectModel extends EventEmitter {
                 favorite: false,
                 voted: false,
                 status: "",
+                approved: true,
                 validName: true,
                 validSmallDescription: true,
                 validExtendedDescription: true,
@@ -275,6 +276,7 @@ class ProjectModel extends EventEmitter {
                 favorite: false,
                 voted: false,
                 status: "",
+                approved: true,
                 validName: true,
                 validSmallDescription: true,
                 validExtendedDescription: true,
@@ -294,14 +296,15 @@ class ProjectModel extends EventEmitter {
         project.approved = approval;
 
         this.emit("changedProjectDetails", this.state);
-    }
+    };
 
     addProject(project) {
         project.id = this.state.projectIndex;
         project.nrOfVotes = 0;
         project.voted = false;
         project.favorite = false;
-        project.status = "";
+        project.status = "Make a selection";
+        project.approved = undefined;
         this.state.projectIndex = this.state.projectIndex + 1;
         this.state.projects.push(project);
         userModel.state.myProjects.push(project.id);

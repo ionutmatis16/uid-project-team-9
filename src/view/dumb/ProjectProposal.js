@@ -11,6 +11,7 @@ const ProjectProposal = ({userModelState, categories, projectModel}) => {
     const [isShortDescriptionError, setShortDescriptionError] = useState(false);
     const [isCategoryError, setCategoryError] = useState(false);
     const [isDetailedDescriptionError, setDetailedDescriptionError] = useState(false);
+    const [isImageError, setImageError] = useState(false);
     return (
         <div>
             <div>
@@ -39,10 +40,11 @@ const ProjectProposal = ({userModelState, categories, projectModel}) => {
                                     name="category"
                                     id="projectCategory"
                                     onChange={() => {
+                                        console.log("categ: " + document.getElementById("projectCategory").value);
                                         setCategoryError(document.getElementById("projectCategory").value === "")
                                     }}
                                     className={isCategoryError ? "validationFailed" : ""}>
-                                    <option value={""}>Make a selection</option>
+                                    <option value="">Make a selection</option>
                                     {
                                         categories.map((category, index) => (
                                             <option key={index}
@@ -82,7 +84,10 @@ const ProjectProposal = ({userModelState, categories, projectModel}) => {
                             </FormGroup>
                             <FormGroup>
                                 <Label for="projectImage">Image</Label>
-                                <Input type="file" name="image" id="projectImage"/>
+                                <Input type="file" name="image" id="projectImage"
+                                onChange={() => {
+                                    setImageError(document.getElementById("projectImage").value === "")
+                                }}/>
                             </FormGroup>
                         </Form>
                         <Button
@@ -91,9 +96,17 @@ const ProjectProposal = ({userModelState, categories, projectModel}) => {
                                 isShortDescriptionError ||
                                 isDetailedDescriptionError ||
                                 isNameError ||
+                                isImageError ||
                                 document.getElementById("projectTitle") === null ||
                                 document.getElementById("projectSmallDescription") === null ||
-                                document.getElementById("projectDetailedDescription") === null
+                                document.getElementById("projectDetailedDescription") === null ||
+                                document.getElementById("projectImage") === null ||
+
+                                document.getElementById("projectTitle").value === "" ||
+                                document.getElementById("projectCategory").value === "" ||
+                                document.getElementById("projectSmallDescription").value === "" ||
+                                document.getElementById("projectDetailedDescription").value === "" ||
+                                document.getElementById("projectImage").value === ""
                             }
                             onClick={() => {
                                 projectModel.addProject({

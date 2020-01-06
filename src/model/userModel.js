@@ -5,7 +5,7 @@ class UserModel extends EventEmitter {
         super();
         this.state = {
             currentUser: {
-                role: "anonymous"
+                role: "user"
             },
             myProjects: [3,4,5],
             votedProjects: [0],

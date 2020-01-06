@@ -15,6 +15,7 @@ function getProjectsBasedOnSearch(projects, props) {
     let text = getQueryParam(props, "text");
 
     projects = projects
+        .filter(project => project.approved === true)
         .filter(project => project.category.toLocaleLowerCase().split(" ").join("_").includes(category))
         .filter(project => project.name.toLocaleLowerCase().includes(text.toLocaleLowerCase()));
 
