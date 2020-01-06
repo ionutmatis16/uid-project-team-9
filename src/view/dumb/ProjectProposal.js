@@ -11,9 +11,9 @@ const ProjectProposal = ({userModelState, categories, projectModel}) => {
     const [isShortDescriptionError, setShortDescriptionError] = useState(false);
     const [isCategoryError, setCategoryError] = useState(false);
     const [isDetailedDescriptionError, setDetailedDescriptionError] = useState(false);
-    const [isImageError, setImageError] = useState(false);
+    const [isImageError, setImageError] = useState(true);
     return (
-        <div>
+        <div className="main-project-proposal-div">
             <div>
                 <h1 className="projects-title">Propose a Project</h1>
             </div>
@@ -40,7 +40,6 @@ const ProjectProposal = ({userModelState, categories, projectModel}) => {
                                     name="category"
                                     id="projectCategory"
                                     onChange={() => {
-                                        console.log("categ: " + document.getElementById("projectCategory").value);
                                         setCategoryError(document.getElementById("projectCategory").value === "")
                                     }}
                                     className={isCategoryError ? "validationFailed" : ""}>
@@ -49,6 +48,8 @@ const ProjectProposal = ({userModelState, categories, projectModel}) => {
                                         categories.map((category, index) => (
                                             <option key={index}
                                                     value={category}
+                                                    onClick={() =>
+                                                        setCategoryError(document.getElementById("projectCategory").value === "")}
                                             >
                                                 {category}
                                             </option>
@@ -85,9 +86,9 @@ const ProjectProposal = ({userModelState, categories, projectModel}) => {
                             <FormGroup>
                                 <Label for="projectImage">Image</Label>
                                 <Input type="file" name="image" id="projectImage"
-                                onChange={() => {
-                                    setImageError(document.getElementById("projectImage").value === "")
-                                }}/>
+                                       onChange={() => {
+                                           setImageError(document.getElementById("projectImage").value === "")
+                                       }}/>
                             </FormGroup>
                         </Form>
                         <Button
@@ -103,7 +104,6 @@ const ProjectProposal = ({userModelState, categories, projectModel}) => {
                                 document.getElementById("projectImage") === null ||
 
                                 document.getElementById("projectTitle").value === "" ||
-                                document.getElementById("projectCategory").value === "" ||
                                 document.getElementById("projectSmallDescription").value === "" ||
                                 document.getElementById("projectDetailedDescription").value === "" ||
                                 document.getElementById("projectImage").value === ""

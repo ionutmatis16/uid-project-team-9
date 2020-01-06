@@ -11,7 +11,9 @@ const AddAnnouncement =
     ({userModelState, announcementModel}) => {
         const [isNameError, setNameError] = useState(false);
         const [isShortDescriptionError, setShortDescriptionError] = useState(false);
-        const [isDetailedDescriptionError, setDetailedDescriptionError] = useState(false)
+        const [isDetailedDescriptionError, setDetailedDescriptionError] = useState(false);
+        const [isImageError, setImageError] = useState(true);
+
         return (
             <div>
                 <div>
@@ -59,17 +61,26 @@ const AddAnnouncement =
                                 </FormGroup>
                                 <FormGroup>
                                     <Label for="announcementImage">Image</Label>
-                                    <Input type="file" name="image" id="announcementImage"/>
+                                    <Input type="file" name="image" id="announcementImage"
+                                           onChange={() => setImageError(document.getElementById("announcementImage").value === "")}/>
                                 </FormGroup>
                             </Form>
                             <Button
                                 disabled={
                                     isDetailedDescriptionError ||
                                     isShortDescriptionError ||
-                                    isNameError||
+                                    isNameError ||
+                                    isImageError ||
+
                                     document.getElementById("announcementTitle") === null ||
                                     document.getElementById("announcementSmallDescription") === null ||
-                                    document.getElementById("announcementDetailedDescription") === null
+                                    document.getElementById("announcementDetailedDescription") === null ||
+                                    document.getElementById("announcementImage") === null ||
+
+                                    document.getElementById("announcementTitle").value === "" ||
+                                    document.getElementById("announcementSmallDescription").value === "" ||
+                                    document.getElementById("announcementDetailedDescription").value === "" ||
+                                    document.getElementById("announcementImage").value === ""
                                 }
                                 onClick={() => {
                                     announcementModel.addAnnouncement({

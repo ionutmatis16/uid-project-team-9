@@ -107,7 +107,7 @@ class ProjectModel extends EventEmitter {
                     favorite: false,
                     voted: false,
                     status: "Make a selection",
-                    approved: false,
+                    approved: undefined,
                     viewed: 301,
                     rating: 4
                 },
@@ -122,7 +122,7 @@ class ProjectModel extends EventEmitter {
                     favorite: false,
                     voted: false,
                     status: "Make a selection",
-                    approved: false,
+                    approved: undefined,
                     viewed: 301,
                     rating: 3
                 }
@@ -304,6 +304,8 @@ class ProjectModel extends EventEmitter {
         project.voted = false;
         project.favorite = false;
         project.status = "Make a selection";
+        project.rating = 0;
+        project.viewed = 0;
         project.approved = undefined;
         this.state.projectIndex = this.state.projectIndex + 1;
         this.state.projects.push(project);

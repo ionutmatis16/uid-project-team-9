@@ -403,3 +403,11 @@
 .my-projects-page-div {
     margin: 0 5%;
 }
+
+#projectDetailedDescription {
+    height: 150px !important;
+}
+
+.main-project-proposal-div {
+    margin-bottom: 100px;
+}
